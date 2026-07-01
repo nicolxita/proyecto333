@@ -22,14 +22,6 @@ except ImportError:
 logger = logging.getLogger(__name__)
 
 # --- Pydantic Schemas for Structured JSON Output ---
-class Benefit(BaseModel):
-    title: str
-    description: str
-
-class Step(BaseModel):
-    title: str
-    description: str
-
 class Highlight(BaseModel):
     title: str
     description: str
@@ -41,31 +33,19 @@ class Review(BaseModel):
     platform: str
     rating: int
 
-class Objection(BaseModel):
-    title: str
-    description: str
-
 class FAQ(BaseModel):
     question: str
     answer: str
 
 class LandingPageCopy(BaseModel):
     seo_title: str
+    hero_bullet_points: List[Highlight]
+    how_to_use: str
     
-    problem_title: str
-    problem_desc: str
-    
+    problem_statement: str
     solution_pretitle: str
     solution_title: str
     solution_desc: str
-    
-    benefits_title: str
-    benefits_desc: str
-    benefits: List[Benefit]
-    
-    how_it_works_title: str
-    how_it_works_desc: str
-    how_it_works_steps: List[Step]
     
     highlights: List[Highlight]
     
@@ -73,10 +53,7 @@ class LandingPageCopy(BaseModel):
     social_proof_desc: str
     reviews: List[Review]
     
-    objections_title: str
-    objections_desc: str
-    objections: List[Objection]
-    
+
     faqs: List[FAQ]
     
     cta_title: str
@@ -98,19 +75,24 @@ Your goal is to write high-converting copy in Spanish for a premium, single-prod
 # BRAND TONE
 Minimalist. Editorial. Premium. Sophisticated. Quiet. Modern. Intentional.
 Do not use aggressive sales tactics (e.g., "BUY NOW BEFORE IT RUNS OUT").
-Focus on emotion, atmosphere, wellness, and problem-solving.
+Focus on deep emotion, atmosphere, wellness, and real transformation. For the highlights/benefits, avoid generic claims like "Premium Quality" or "Fast Results". Instead, focus on emotional hooks: how it restores confidence, brings peace of mind, or deeply impacts their daily life.
 
 # SECTIONS TO GENERATE
-1. Problem: Agitate a pain point that the product solves.
-2. Solution: Present the product elegantly.
-3. Benefits: 4 key benefits.
-4. How it works: 3 simple steps to use the product.
-5. Highlights: 2 specific features/technologies.
-6. Social Proof: Encontrar 5 comentarios REALES de clientes reales.
+1. Header:
+   - hero_bullet_points: EXACTLY 3 punchy bullet points. Format: title is a short bold punchline (max 4 words), description is a brief explanation (max 8 words). Example: title="Formato Gigante", description="1 Kilo que dura muchísimo más". Focus on product characteristics and emotional hooks.
+2. Problem/Solution Block: A SUPER FAST, extremely short and easy to read pitch. Keep it minimal.
+   - problem_statement: MAXIMUM 15 WORDS. A direct pain point question/statement. DO NOT use emojis. (e.g. "¿Falta de vitalidad o cabello débil? Recupera tu energía.")
+   - solution_title: MAXIMUM 6 WORDS. The main headline.
+   - solution_desc: MAXIMUM 15 WORDS. Direct solution statement. DO NOT use emojis. (e.g. "Nutre tu cuerpo desde adentro y restaura tu bienestar profundo.")
+3. Highlights: EXACTLY 3 specific features/benefits. DO NOT use emojis.
+   - title: MAXIMUM 4 WORDS.
+   - description: MAXIMUM 8 WORDS. Extremely concise.
+4. How to use (how_to_use): A short, 1-2 sentence instruction on how to use or apply the product.
+5. Social Proof: Encontrar 3 comentarios REALES de clientes reales.
    - Criterios: Orgánicos (lenguaje natural, expresiones reales, emojis si aplica). No uses reseñas perfectas tipo corporativo ("Es un producto excelente"). Busca textos auténticos ("Al principio dudaba pero de verdad funciona", "Llegó super rápido y el material es de 10"). Deben mencionar un beneficio específico o cómo solucionó un problema. Ubicación sugerida: Chile.
-   - Formato: platform debe ser TikTok, Amazon, Reddit o X. rating debe ser 4 o 5.
-7. Objections: 3 common doubts and elegant answers showing safety and quality.
-8. FAQs: 5-8 frequently asked questions. MUST include one exactly with the question: "¿Qué significa que sea pago contra entrega?" and the answer MUST briefly explain that they order now without paying, and only pay (cash/transfer) when they receive the product in their hands.
+   - Formato: platform DEBE SER "Facebook". rating debe ser 4 o 5.
+
+6. FAQs: 5-8 frequently asked questions. MUST include one exactly with the question: "¿Qué significa que sea pago contra entrega?" and the answer MUST briefly explain that they order now without paying, and only pay (cash/transfer) when they receive the product in their hands.
 
 # SCORING
 You must assign a dropshipping_score from 1 to 10 (1 = Premium Apple-like brand, 10 = Scammy AliExpress dropshipping). You MUST aim for 1 or 2.
@@ -119,28 +101,79 @@ Ensure all copy is in natural, persuasive Chilean Spanish.
 """
 
 def _generate_fallback_html(state: ProductState) -> str:
-    """Genera un HTML estático básico de fallback si la API falla."""
-    headline = state.generated_copy.get("headline", "Increíble Producto")
-    body = state.generated_copy.get("body", "Consigue el tuyo hoy.")
-    price = state.suggested_price
+    """Genera un HTML usando la plantilla completa pero con datos de fallback por fallo de API."""
+    from jinja2 import Environment, FileSystemLoader
+    from datetime import datetime, timedelta
     
-    return f"""<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{state.product_name}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#FAFAFA] text-[#111111] font-sans antialiased">
-    <div class="max-w-2xl mx-auto p-12 text-center space-y-8 mt-20 bg-white rounded-2xl shadow-sm border border-gray-100">
-        <h1 class="text-3xl font-medium tracking-tight">{{headline}}</h1>
-        <p class="text-gray-500 font-light">{{body}}</p>
-        <p class="text-2xl font-medium">${{price}}</p>
-        <button class="bg-[#111111] text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors">Comprar Ahora</button>
-    </div>
-</body>
-</html>"""
+    env = Environment(loader=FileSystemLoader('templates'))
+    template = env.get_template('landing.html')
+    
+    fecha_inicio = (datetime.now() + timedelta(days=2)).strftime("%d de %b")
+    fecha_fin = (datetime.now() + timedelta(days=5)).strftime("%d de %b")
+    
+    def fmt_price(val):
+        return f"${int(val):,}".replace(",", ".")
+        
+    offer_price = fmt_price(state.suggested_price * 1000)
+    normal_price = fmt_price(state.suggested_price * 2000)
+    promo_2_price = fmt_price(state.suggested_price * 1500)
+    
+    images = ["assets/1.webp", "assets/2.webp", "assets/11.png"]
+    
+    copy_data = {
+        "seo_title": state.product_name,
+        "hero_bullet_points": [
+            {"title": "Formato Gigante", "description": "1 Kilo para que te dure mucho más"},
+            {"title": "Fórmula Sin Sabor", "description": "ideal para mezclar con tu bebida favorita"},
+            {"title": "Absorción Rápida", "description": "resultados visibles en la primera semana"}
+        ],
+        "how_to_use": "Añade una porción diaria a tu bebida favorita (fría o caliente), revuelve bien y disfruta de sus beneficios. Su formato sin sabor lo hace perfecto para cualquier momento del día.",
+        "problem_statement": "¿Falta de vitalidad o cabello débil? El tiempo reduce tu energía.",
+        "solution_pretitle": "LA SOLUCIÓN",
+        "solution_title": "Recupera tu Confianza Total",
+        "solution_desc": "Nutre tu cuerpo desde adentro y restaura tu vitalidad natural.",
+        "highlights": [
+            {
+                "title": "Piel Firme",
+                "description": "Rellena líneas desde el interior."
+            },
+            {
+                "title": "Uñas Fuertes",
+                "description": "Restaura fuerza y brillo natural."
+            },
+            {
+                "title": "Más Energía",
+                "description": "Despierta renovada todos los días."
+            }
+        ],
+        "social_proof_title": "Lo que dicen nuestros clientes",
+        "social_proof_desc": "Miles de personas ya lo han probado.",
+        "reviews": [
+            {"quote": "Excelente producto, llegó muy rápido y funciona de maravilla. Totalmente recomendado.", "author": "María G.", "location": "Santiago", "platform": "Facebook", "rating": 5},
+            {"quote": "Al principio dudaba pero de verdad cumple lo que promete. Lo volvería a comprar sin pensarlo.", "author": "Juan P.", "location": "Viña del Mar", "platform": "Facebook", "rating": 5},
+            {"quote": "Me encantó, el formato es súper práctico y los resultados se notan muchísimo.", "author": "Camila S.", "location": "Concepción", "platform": "Facebook", "rating": 5}
+        ],
+        "faqs": [
+            {"question": "¿Qué significa que sea pago contra entrega?", "answer": "Significa que puedes hacer tu pedido ahora sin pagar nada, y solo pagas (en efectivo o transferencia) cuando recibas el producto en tus manos en tu domicilio."},
+            {"question": "¿Cuánto demora el envío a mi región?", "answer": "Los envíos suelen tardar entre 2 a 5 días hábiles dependiendo de la región en la que te encuentres."}
+        ],
+        "cta_title": "No esperes más, mejora tu rutina",
+        "cta_desc": "Aprovecha esta oferta por tiempo limitado. Pídelo hoy y paga al recibir.",
+        "dropshipping_score": 1
+    }
+    
+    return template.render(
+        **copy_data,
+        product_name=state.product_name,
+        sku=f"MA-{state.product_name[:3].upper()}-001",
+        offer_price=offer_price,
+        normal_price=normal_price,
+        promo_2_price=promo_2_price,
+        fecha_inicio=fecha_inicio,
+        fecha_fin=fecha_fin,
+        image_assets=images,
+        tiktok_videos=["7649576135742754062", "7538956249505795334", "7378966449324346670"]
+    )
 
 
 async def _generate_dynamic_html(state: ProductState) -> str:
@@ -222,10 +255,8 @@ Generate the JSON copy now.
             normal_price = fmt_price(state.suggested_price * 2000)
             promo_2_price = fmt_price(state.suggested_price * 1500)
             
-            # Ensure we have at least 2 images for the template
-            images = state.image_assets if state.image_assets else ["", ""]
-            if len(images) == 1:
-                images.append(images[0])
+            # Override image_assets with the user-provided files
+            images = ["assets/1.webp", "assets/2.webp", "assets/11.png"]
             
             html_content = template.render(
                 **copy_data,
@@ -236,7 +267,8 @@ Generate the JSON copy now.
                 promo_2_price=promo_2_price,
                 fecha_inicio=fecha_inicio,
                 fecha_fin=fecha_fin,
-                image_assets=images
+                image_assets=images,
+                tiktok_videos=["7649576135742754062", "7538956249505795334", "7378966449324346670"]
             )
             
             return html_content

@@ -40,15 +40,12 @@ Apple/Linear Similarity: 9/10
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ seo_title }} - Mundo Aura</title>
+    <title>Humidificador Llama 3D | Aromaterapia y Diseño para tu Hogar en Chile - Mundo Aura</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --theme-color: #bae6fd; /* Light blue from screenshot (sky-200) */
-        }
         body {
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -89,75 +86,51 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
 </head>
 <body class="bg-white text-gray-900 relative overflow-x-hidden">
     
-    <!-- Moving Banner (Now Above Header) -->
-    <div class="bg-gray-50 border-b border-gray-200/50 overflow-hidden relative z-50 w-full">
-        <div class="marquee-content whitespace-nowrap py-1">
-            <p class="text-[11px] font-medium text-gray-900/50 px-6 tracking-widest">ENVÍO GRATIS A TODO CHILE ✦ PAGO CONTRA ENTREGA ✦</p>
-            <p class="text-[11px] font-medium text-gray-900/50 px-6 tracking-widest">ENVÍO GRATIS A TODO CHILE ✦ PAGO CONTRA ENTREGA ✦</p>
-            <p class="text-[11px] font-medium text-gray-900/50 px-6 tracking-widest">ENVÍO GRATIS A TODO CHILE ✦ PAGO CONTRA ENTREGA ✦</p>
-            <p class="text-[11px] font-medium text-gray-900/50 px-6 tracking-widest">ENVÍO GRATIS A TODO CHILE ✦ PAGO CONTRA ENTREGA ✦</p>
-        </div>
-    </div>
 
-    <!-- Minimal Header -->
-    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-gray-100 shadow-sm">
-        <div class="w-full px-4 md:px-8 py-2 flex items-center justify-between h-[60px] md:h-[70px]">
-            <!-- Left: Hamburger -->
-            <button onclick="document.getElementById('mobileDrawer').classList.remove('-translate-x-full'); document.getElementById('drawerOverlay').classList.remove('hidden');" class="flex-none p-2 hover:bg-gray-100 rounded-lg transition-colors text-gray-500">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div class="w-full px-4 md:px-8 py-4 flex justify-between items-center">
+            <h2 class="text-3xl font-extrabold tracking-tight flex items-center">MUNDO <img src="assets/estrella.png?v=2" alt="*" class="h-14 w-auto object-contain mx-3 -mt-2 rounded-sm"> AURA</h2>
+            <button onclick="document.getElementById('checkoutModal').classList.remove('hidden')" class="hidden sm:inline-block bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors">
+                Comprar Ahora
             </button>
-
-            <!-- Center: Logo -->
-            <div class="flex-1 flex justify-center items-center cursor-pointer" onclick="window.scrollTo(0,0)">
-                <h2 class="text-xl md:text-2xl font-medium tracking-tight flex items-center text-gray-900">
-                    MUNDO <img src="assets/estrella.png?v=2" alt="*" class="h-6 md:h-8 w-auto object-contain mx-2 -mt-1 rounded-sm"> AURA
-                </h2>
-            </div>
-            
-            <!-- Right: Spacer (No cart as per user request) -->
-            <div class="flex-none w-[44px]"></div>
         </div>
     </header>
 
-    <div id="drawerOverlay" class="fixed inset-0 bg-black/50 z-[60] hidden backdrop-blur-sm transition-opacity" onclick="document.getElementById('mobileDrawer').classList.add('-translate-x-full'); this.classList.add('hidden');"></div>
-    <div id="mobileDrawer" class="fixed top-0 left-0 w-[280px] h-full bg-white z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col">
-        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
-            <h3 class="font-bold text-lg text-gray-900">Menú</h3>
-            <button onclick="document.getElementById('mobileDrawer').classList.add('-translate-x-full'); document.getElementById('drawerOverlay').classList.add('hidden');" class="p-2 hover:bg-gray-200 rounded-full text-gray-500">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
-            </button>
+    
+
+        <div class="bg-gray-50 border-b border-gray-200/50 overflow-hidden relative z-10 w-full">
+            <div class="marquee-content whitespace-nowrap py-2">
+                <p class="text-xs font-medium text-gray-900/50 px-6">ENVÍO GRATIS A TODO CHILE ✦ PAGO CONTRA ENTREGA ✦ GARANTÍA DE SATISFACCIÓN ✦</p>
+                <p class="text-xs font-medium text-gray-900/50 px-6">ENVÍO GRATIS A TODO CHILE ✦ PAGO CONTRA ENTREGA ✦ GARANTÍA DE SATISFACCIÓN ✦</p>
+                <p class="text-xs font-medium text-gray-900/50 px-6">ENVÍO GRATIS A TODO CHILE ✦ PAGO CONTRA ENTREGA ✦ GARANTÍA DE SATISFACCIÓN ✦</p>
+                <p class="text-xs font-medium text-gray-900/50 px-6">ENVÍO GRATIS A TODO CHILE ✦ PAGO CONTRA ENTREGA ✦ GARANTÍA DE SATISFACCIÓN ✦</p>
+            </div>
         </div>
-        <div class="flex flex-col p-4 gap-2">
-            <a href="#faq" onclick="document.getElementById('mobileDrawer').classList.add('-translate-x-full'); document.getElementById('drawerOverlay').classList.add('hidden');" class="px-4 py-3 text-left text-gray-700 font-medium hover:bg-gray-50 rounded-lg w-full block">Preguntas Frecuentes</a>
-            <button onclick="document.getElementById('mobileDrawer').classList.add('-translate-x-full'); document.getElementById('drawerOverlay').classList.add('hidden'); try { switchTab('tab-delivery'); document.getElementById('btn-tab-delivery').scrollIntoView({behavior: 'smooth', block: 'center'}); } catch(e){}" class="px-4 py-3 text-left text-gray-700 font-medium hover:bg-gray-50 rounded-lg w-full">Envíos</button>
-            <button onclick="document.getElementById('mobileDrawer').classList.add('-translate-x-full'); document.getElementById('drawerOverlay').classList.add('hidden'); document.getElementById('modalReturns').classList.remove('hidden');" class="px-4 py-3 text-left text-gray-700 font-medium hover:bg-gray-50 rounded-lg w-full">Política de Garantía</button>
-        </div>
-    </div>
 
         <main class="relative z-10">
         <!-- 1. Hero Section -->
         <section class="container mx-auto px-6 py-12 md:py-20">
             <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
-                <div class="lg:col-span-6 flex flex-col-reverse md:flex-row gap-4 w-full max-w-[500px] mx-auto lg:ml-auto lg:mr-0 min-w-0">
+                <div class="lg:col-span-7 flex flex-col-reverse md:flex-row gap-3 md:gap-4 w-full max-w-2xl mx-auto lg:mr-0 min-w-0">
                     <!-- Thumbnails -->
                     <div class="flex flex-row md:flex-col gap-3 md:gap-4 shrink-0 md:w-20">
-                        <button onclick="document.getElementById('main-product-image').src='{{ image_assets[0] }}'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden ring-2 ring-indigo-500 hover:opacity-80 transition-opacity">
-                            <img src="{{ image_assets[0] }}" class="w-full h-full object-contain">
+                        <button onclick="document.getElementById('main-product-image').src='assets/real_humidifier_1.png'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden border-2 border-indigo-600 hover:opacity-80 transition-opacity">
+                            <img src="assets/real_humidifier_1.png" class="w-full h-full object-cover">
                         </button>
-                        <button onclick="document.getElementById('main-product-image').src='{% if image_assets|length > 1 %}{{ image_assets[1] }}{% else %}{{ image_assets[0] }}{% endif %}'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden ring-1 ring-gray-200 hover:opacity-80 transition-opacity">
-                            <img src="{% if image_assets|length > 1 %}{{ image_assets[1] }}{% else %}{{ image_assets[0] }}{% endif %}" class="w-full h-full object-contain">
+                        <button onclick="document.getElementById('main-product-image').src='assets/real_humidifier_2.png'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden border border-gray-200 hover:opacity-80 transition-opacity">
+                            <img src="assets/real_humidifier_2.png" class="w-full h-full object-cover">
                         </button>
-                        <button onclick="document.getElementById('main-product-image').src='{% if image_assets|length > 2 %}{{ image_assets[2] }}{% else %}{{ image_assets[0] }}{% endif %}'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden ring-1 ring-gray-200 hover:opacity-80 transition-opacity">
-                            <img src="{% if image_assets|length > 2 %}{{ image_assets[2] }}{% else %}{{ image_assets[0] }}{% endif %}" class="w-full h-full object-contain">
+                        <button onclick="document.getElementById('main-product-image').src='assets/real_humidifier_3.png'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden border border-gray-200 hover:opacity-80 transition-opacity">
+                            <img src="assets/real_humidifier_3.png" class="w-full h-full object-cover">
                         </button>
                     </div>
                     <!-- Main Image -->
-                    <div class="flex-1 w-full relative flex items-center justify-center overflow-hidden" style="aspect-ratio: 4/5;">
-                        <img id="main-product-image" src="{{ image_assets[0] }}" alt="Producto" class="w-full h-full object-contain">
+                    <div class="flex-1 h-auto aspect-square bg-gray-50 rounded-3xl overflow-hidden border border-gray-100 shadow-sm relative">
+                        <img id="main-product-image" src="assets/real_humidifier_1.png" alt="Humidificador" class="w-full h-full object-cover">
                     </div>
                 </div>
-                <div class="lg:col-span-6 w-full min-w-0">
-                    <div class="bg-white rounded-3xl p-5 md:p-6 shadow-xl border border-gray-100 max-w-[500px] w-full mx-auto lg:ml-0 lg:mr-auto">
+                <div class="lg:col-span-5 w-full lg:ml-0 min-w-0">
+                    <div class="bg-white rounded-3xl p-5 md:p-6 shadow-xl border border-gray-100 max-w-[420px] w-full mx-auto lg:mx-0">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="flex items-center gap-1.5 text-xs font-bold text-rose-600 bg-rose-50 border border-rose-200 px-2.5 py-0.5 rounded-full w-fit animate-pulse shadow-sm">
                             <svg class="w-3.5 h-3.5 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" /></svg>
@@ -165,70 +138,39 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                             </div>
                         </div>
                         <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight tracking-tight mb-2">
-                            {{ product_name }}
+                            Humidificador Difusor Aromaterapia Llama 3D
                         </h1>
                         <a href="#reviews" class="flex items-center gap-2 mb-5 text-xs text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer w-fit group">
                             <div class="flex text-amber-400 text-base">★★★★★</div>
-                            <span class="font-medium underline decoration-gray-300 underline-offset-2 group-hover:decoration-indigo-400 transition-colors">(184 valoraciones)</span>
+                            <span class="font-medium underline decoration-gray-300 underline-offset-2 group-hover:decoration-indigo-400 transition-colors">(12.500+ valoraciones)</span>
                         </a>
                         <div class="bg-gray-50 rounded-2xl p-3 flex justify-between items-center mb-5 border border-gray-100">
                             <div>
                             <span class="block text-[10px] font-bold text-gray-500 tracking-wider mb-1">PRECIO DE OFERTA</span>
                             <div class="flex items-end gap-2">
-                                <span class="text-2xl font-extrabold text-emerald-600">{{ offer_price }}</span>
+                                <span class="text-2xl font-extrabold text-emerald-600">$34.990</span>
                                 <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1">-50% OFF</span>
                             </div>
                             </div>
                             <div class="text-right">
                             <span class="block text-[10px] font-bold text-gray-500 tracking-wider mb-1">NORMAL</span>
-                            <span class="text-lg font-bold text-gray-400 line-through">{{ normal_price }}</span>
+                            <span class="text-lg font-bold text-gray-400 line-through">$69.980</span>
                             </div>
                         </div>
-                        
-                        <ul class="flex flex-col gap-3 mb-5 mt-5">
-                            {% for point in hero_bullet_points %}
-                            <li class="flex items-center gap-2.5">
-                                <div class="w-5 h-5 rounded-full bg-pink-300 flex items-center justify-center shrink-0 shadow-sm">
-                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-                                </div>
-                                <div class="text-[14px] font-bold text-gray-900 line-clamp-1">
-                                    {{ point.title }}
-                                </div>
-                            </li>
-                            {% else %}
-                            <li class="flex items-center gap-2.5">
-                                <div class="w-5 h-5 rounded-full bg-pink-300 flex items-center justify-center shrink-0 shadow-sm">
-                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-                                </div>
-                                <div class="text-[14px] font-bold text-gray-900 line-clamp-1">
-                                    Formato Gigante de 1 Kilo
-                                </div>
-                            </li>
-                            <li class="flex items-center gap-2.5">
-                                <div class="w-5 h-5 rounded-full bg-pink-300 flex items-center justify-center shrink-0 shadow-sm">
-                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-                                </div>
-                                <div class="text-[14px] font-bold text-gray-900 line-clamp-1">
-                                    Fórmula Sin Sabor
-                                </div>
-                            </li>
-                            {% endfor %}
-                        </ul>
-
                         <div class="mb-5">
                             <span class="block text-[10px] font-bold text-gray-500 tracking-wider mb-2">SELECCIONA TU PROMOCIÓN (ENVÍO GRATIS):</span>
                             <div class="grid grid-cols-2 gap-2" id="promo-selector">
-                            <label onclick="selectPromo(1, '{{ offer_price }}')" id="label-promo-1" class="relative border-2 border-indigo-600 bg-indigo-50/30 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors">
+                            <label onclick="selectPromo(1, '$34.990')" id="label-promo-1" class="relative border-2 border-indigo-600 bg-indigo-50/30 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors">
                                 <input type="radio" name="promo" value="1" class="hidden" checked>
                                 <span class="block text-xs font-bold text-gray-900 mb-0.5">Llevar 1 Unidad</span>
                                 <span class="block text-[10px] text-gray-500 mb-1">Precio Unitario</span>
-                                <span class="block font-extrabold text-emerald-600 text-base">{{ offer_price }}</span>
+                                <span class="block font-extrabold text-emerald-600 text-base">$34.990</span>
                             </label>
-                            <label onclick="selectPromo(2, '{{ promo_2_price }}')" id="label-promo-2" class="relative border-2 border-gray-100 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors hover:border-indigo-400">
+                            <label onclick="selectPromo(2, '$52.485')" id="label-promo-2" class="relative border-2 border-gray-100 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors hover:border-indigo-400">
                                 <input type="radio" name="promo" value="2" class="hidden">
                                 <span class="block text-xs font-bold text-gray-600 mb-0.5">Llevar 2 Unidades</span>
                                 <span class="block text-[10px] text-indigo-600 font-bold mb-1">Segunda al 50%</span>
-                                <span class="block font-extrabold text-gray-900 text-base">{{ promo_2_price }}</span>
+                                <span class="block font-extrabold text-gray-900 text-base">$52.485</span>
                             </label>
                             </div>
                         </div>
@@ -255,207 +197,148 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                         </div>
                 </div>
             </div>
+        
+
         </section>
 
-
-
-        <!-- Benefits Section (Problem / Solution Block) -->
-        <section class="bg-white py-10 md:py-12">
-            <div class="container mx-auto px-4 max-w-6xl">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="max-w-2xl order-2 md:order-1">
-                        <div class="text-left mb-6">
-                            <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3 leading-snug">{{ solution_title | default('Recupera tu Confianza Total con este Tratamiento') }}</h2>
-                            <p class="text-[14px] text-gray-600 leading-relaxed mb-5 font-medium">
-                                {{ problem_statement | default('¿Sufres por cabello débil, uñas quebradizas o te sientes apagada por la mañana? El estrés y el tiempo nos quitan nuestra vitalidad.') }}
-                            </p>
-                            <div class="bg-gray-100 border-l-4 border-gray-400 p-3 rounded-r-lg">
-                                <p class="text-[14px] font-bold text-gray-800 leading-relaxed">
-                                    {{ solution_desc | default('Nutre tu cuerpo desde adentro y restaura tu vitalidad natural.') }}
-                                </p>
-                            </div>
-                        </div>
-                        
-                        {% if highlights %}
-                        <ul class="flex flex-col gap-4 text-left">
-                            {% for highlight in highlights %}
-                            <li class="flex items-start gap-2.5">
-                                <div class="mt-1 flex-shrink-0">
-                                    <div class="w-2 h-2 rounded-full bg-pink-300 mt-1"></div>
-                                </div>
-                                <div class="text-[14px] text-gray-800 leading-relaxed">
-                                    <strong class="font-extrabold text-gray-900">{{ highlight.title }}:</strong> {{ highlight.description }}
-                                </div>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                    </div>
-                    <!-- GIF Mobile Top, Desktop Right -->
-                    <div class="flex justify-center md:justify-end w-full pl-0 md:pl-8 order-1 md:order-2">
-                        <div class="w-full max-w-[380px] rounded-3xl overflow-hidden shadow-lg border border-gray-100 bg-white">
-                            <img src="assets/1763131780-1114-ezgif.com-gif-to-webp-converter.webp" alt="Beneficios" class="w-full aspect-square object-cover" onerror="this.src='https://placehold.co/800x800/f8fafc/64748b?text=GIF+BENEFICIOS'">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tabbed Information Section -->
-        <section id="reviews" class="bg-gray-50 py-10 md:py-12">
-            <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Social Proof Section -->
+        <section id="reviews" class="bg-[#F8F9FA] py-12 md:py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3 tracking-tighter">Lo que dicen quienes ya lo tienen</h3>
+                <p class="text-base text-gray-600 mb-10 max-w-2xl mx-auto">Comentarios 100% reales de personas que ya disfrutan de su Humidificador.</p>
                 
-                <div class="bg-[#f9f9f9] border border-gray-200 rounded-3xl shadow-sm overflow-hidden flex flex-col">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     
-                    <!-- Tab Headers -->
-                    <div class="flex flex-wrap md:flex-nowrap border-b border-gray-200 bg-[#F3F2F0] p-1 pb-0 gap-1">
-                        <button onclick="switchTab('tab-reviews')" id="btn-tab-reviews" class="flex-1 py-2.5 px-3 text-center font-semibold text-[13px] transition-colors rounded-t-2xl bg-[#f9f9f9] text-gray-900 relative">
-                            Testimonios
-                        </button>
-                        <button onclick="switchTab('tab-desc')" id="btn-tab-desc" class="flex-1 py-2.5 px-3 text-center font-semibold text-[13px] text-gray-500 hover:text-gray-800 transition-colors rounded-t-2xl hover:bg-gray-200/50">
-                            Descripción
-                        </button>
-                        <button onclick="switchTab('tab-delivery')" id="btn-tab-delivery" class="flex-1 py-2.5 px-3 text-center font-semibold text-[13px] text-gray-500 hover:text-gray-800 transition-colors rounded-t-2xl hover:bg-gray-200/50">
-                            Envíos
-                        </button>
-                    </div>
-                    
-                    <!-- Tab Contents -->
-                    <div class="p-5 md:p-6 bg-[#f9f9f9]">
-                        
-                        <!-- Tab 1: Reviews -->
-                        <div id="tab-reviews" class="block animate-fade-in">
-                            <h4 class="text-xs font-bold text-gray-500 mb-4 uppercase tracking-wider text-center md:text-left">Testimonios de Facebook</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    {% if reviews %}
-                        {% for review in reviews %}
-                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-3.5 pb-2">
-                            <!-- Post Header -->
-                            <div class="flex items-center gap-2.5 mb-2.5">
-                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-100 to-blue-200 flex items-center justify-center text-blue-800 font-bold text-sm shrink-0">
-                                    {{ review.author[0]|upper if review.author else 'U' }}
+                        <div class="bg-white rounded-[20px] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col items-start text-left hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+                            <div class="flex items-center w-full mb-3 space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex-shrink-0 flex items-center justify-center text-gray-600 font-bold text-lg">
+                                    V
                                 </div>
-                                <div class="flex flex-col">
-                                    <div class="flex items-center gap-1">
-                                        <span class="font-bold text-[13px] text-gray-900 leading-tight hover:underline cursor-pointer">{{ review.author }}</span>
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-bold text-sm text-gray-900 tracking-tight">@vale_ignacia</span>
+                                        <svg class="w-3 h-3 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                     </div>
-                                    <div class="flex items-center text-[11px] text-gray-500 gap-1">
-                                        {% set times = ['Hace 2 h', 'Hace 22 h', 'Hace 3 d'] %}
-                                        <span>{{ times[loop.index0] if loop.index0 < 3 else 'Hace ' ~ (loop.index * 2) ~ ' h' }}</span>
-                                        <span>•</span>
-                                        <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 16 16"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4.4 11.5c-.2.2-.6.2-.8 0L8 8.4V4c0-.3.2-.5.5-.5s.5.2.5.5v4l3.4 2.7c.2.2.2.6 0 .8z"/></svg>
-                                    </div>
+                                    <div class="text-[11px] font-medium text-gray-400">TikTok</div>
+                                </div>
+                                <div class="flex text-yellow-400 space-x-0.5">
+                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                                 </div>
                             </div>
-                            
-                            <!-- Post Body -->
-                            <p class="text-[13px] text-gray-900 mb-2.5 whitespace-pre-line leading-relaxed">{{ review.quote }}</p>
-                            
-                            <!-- Placeholder Photo -->
-                            <div class="w-full bg-gray-100 rounded-lg overflow-hidden border border-gray-100 mb-2.5">
-                                {% set avif_files = ['l.avif', 'l (1).avif', 'l (2).avif'] %}
-                                <img src="assets/{{ avif_files[loop.index0] if loop.index0 < 3 else 'review_' ~ loop.index ~ '.jpg' }}" alt="Foto de reseña" class="w-full h-auto object-contain max-h-[350px]" onerror="this.style.display='none'">
-                            </div>
-                            
-                            <!-- Reactions -->
-                            <div class="flex items-center justify-between text-[12px] text-gray-500 py-1.5 border-b border-gray-100">
-                                <div class="flex items-center gap-1">
-                                    <div class="flex -space-x-1">
-                                        <div class="w-4 h-4 rounded-full border border-white flex items-center justify-center overflow-hidden shrink-0">
-                                        <svg viewBox="0 0 1024 1024" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><circle cx="512" cy="512" r="512" fill="#1877f2"/><path d="M738.1 486.2c0-37.4-28-67.7-62.5-67.7H543.8c11-37.7 21.6-84.3 21.6-118 0-41.2-22.3-76.4-56-76.4-18.8 0-35.7 9-47 23.3-15.6 19.8-19.3 43-22.8 62.7-5.3 30.6-25.1 76-52.6 117.8L377 441.7v333.6l10-6.6c27.6-18.4 60.5-28.1 94.4-28.1h194.2c34.5 0 62.5-30.3 62.5-67.7V486.2z" fill="#fff"/><path d="M366.1 441.7H262.8c-12 0-21.7 9.7-21.7 21.7v290.1c0 12 9.7 21.7 21.7 21.7h103.2V441.7z" fill="#fff"/></svg>
-                                    </div>
-                                        <div class="w-4 h-4 rounded-full border border-white flex items-center justify-center overflow-hidden shrink-0">
-                                        <svg viewBox="0 0 1024 1024" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><circle cx="512" cy="512" r="512" fill="#f33e58"/><path d="M728.3 361.6c-48.4-48.4-126.9-48.4-175.3 0L512 402.6l-41-41c-48.4-48.4-126.9-48.4-175.3 0-48.4 48.4-48.4 126.9 0 175.3L512 753.2l216.3-216.3c48.4-48.4 48.4-126.9 0-175.3z" fill="#fff"/></svg>
-                                    </div>
-                                    </div>
-                                    <span class="ml-1">{{ loop.index * 5 + 12 }}</span>
+                            <p class="text-gray-800 text-[15px] leading-relaxed mb-3 font-medium w-full">"Llegó super rápido a Providencia!! Las gotitas de lavanda huelen exquisito en toda mi pieza, recomendadísimo ✨"</p>
+                            <div class="mt-auto pt-3 border-t border-gray-50 w-full flex items-center justify-between text-gray-400 text-[11px] font-medium">
+                                <div class="flex items-center space-x-4">
+                                    <span class="flex items-center hover:text-red-500 cursor-pointer transition-colors"><svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg> 58</span>
+                                    <span class="flex items-center hover:text-gray-600 cursor-pointer transition-colors"><svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg> Responder</span>
                                 </div>
-                                <div>
-                                    <span class="hover:underline cursor-pointer">{{ loop.index + 2 }} comentarios</span>
+                                <span>Providencia</span>
+                            </div>
+                        </div>
+            
+                        <div class="bg-white rounded-[20px] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col items-start text-left hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+                            <div class="flex items-center w-full mb-3 space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex-shrink-0 flex items-center justify-center text-gray-600 font-bold text-lg">
+                                    S
                                 </div>
-                            </div>
-                            
-                            <!-- Action Buttons -->
-                            <div class="flex items-center justify-between pt-1">
-                                <button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-gray-600 hover:bg-gray-50 rounded-lg font-semibold text-[11px] transition-colors">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.514"></path></svg>
-                                    Me gusta
-                                </button>
-                                <button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-gray-600 hover:bg-gray-50 rounded-lg font-semibold text-[11px] transition-colors">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                                    Comentar
-                                </button>
-                                <button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-gray-600 hover:bg-gray-50 rounded-lg font-semibold text-[11px] transition-colors">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
-                                    Compartir
-                                </button>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-                        </div>
-
-                        <!-- Tab 2: Description -->
-                        <div id="tab-desc" class="hidden animate-fade-in">
-                            <div class="max-w-4xl mx-auto py-4">
-                                <h3 class="text-xl font-bold text-gray-900 mb-4">{{ product_name }}</h3>
-                                <p class="text-[15px] text-gray-700 leading-relaxed mb-6 whitespace-pre-line">
-                                    {{ solution_desc | default('Descubre la diferencia con nuestro producto diseñado para brindarte los mejores resultados y acompañarte en tu rutina diaria con la máxima calidad y efectividad.') }}
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Tab 3: Delivery -->
-                        <div id="tab-delivery" class="hidden animate-fade-in">
-                            <div class="max-w-4xl mx-auto py-4">
-                                <div class="flex items-center gap-3 mb-5">
-                                    <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-bold text-sm text-gray-900 tracking-tight">Sebastián R.</span>
+                                        <svg class="w-3 h-3 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                     </div>
-                                    <h3 class="text-lg font-bold text-gray-900">Envío Gratis y Pago en Casa</h3>
+                                    <div class="text-[11px] font-medium text-gray-400">Amazon</div>
                                 </div>
-                                <ul class="space-y-4 text-[15px] text-gray-700 leading-relaxed">
-                                    <li class="flex gap-2.5 items-start">
-                                        <span class="text-indigo-500 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></span>
-                                        <span><strong class="text-gray-900">Santiago (RM):</strong> Entrega rápida en 24 a 48 horas hábiles.</span>
-                                    </li>
-                                    <li class="flex gap-2.5 items-start">
-                                        <span class="text-indigo-500 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></span>
-                                        <span><strong class="text-gray-900">Regiones:</strong> Entrega en 3 a 5 días hábiles a través de nuestros couriers asociados (Bluexpress, Starken).</span>
-                                    </li>
-                                    <li class="flex gap-2.5 items-start">
-                                        <span class="text-indigo-500 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></span>
-                                        <span><strong class="text-gray-900">Pago Contra Entrega:</strong> Sin riesgos. Pagas tu pedido en efectivo o transferencia solo cuando el repartidor te lo entregue en la puerta de tu casa.</span>
-                                    </li>
-                                </ul>
+                                <div class="flex text-yellow-400 space-x-0.5">
+                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-gray-800 text-[15px] leading-relaxed mb-3 font-medium w-full">"Al principio dudaba si realmente tiraba ese efecto de fuego, pero sí. Se ve increíble en el escritorio de noche y no mete nada de ruido."</p>
+                            <div class="mt-auto pt-3 border-t border-gray-50 w-full flex items-center justify-between text-gray-400 text-[11px] font-medium">
+                                <div class="flex items-center space-x-4">
+                                    <span class="flex items-center hover:text-red-500 cursor-pointer transition-colors"><svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg> 99</span>
+                                    <span class="flex items-center hover:text-gray-600 cursor-pointer transition-colors"><svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg> Responder</span>
+                                </div>
+                                <span>Las Condes</span>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- GIF Showcase (Desktop Grid) -->
-        <section class="bg-white py-8 md:py-12">
-            <div class="container mx-auto px-4 max-w-6xl">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <!-- Text Left -->
-                    <div class="max-w-2xl">
-                        <div class="text-left mb-6">
-                            <h3 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3 leading-snug">¿Cómo se usa?</h3>
-                            <p class="text-[14px] text-gray-600 leading-relaxed mb-5 font-medium">
-                                {{ how_to_use | default('Añade una porción diaria a tu bebida favorita (fría o caliente), revuelve bien y disfruta de sus beneficios. Su formato sin sabor lo hace perfecto para cualquier momento del día.') }}
-                            </p>
+            
+                        <div class="bg-white rounded-[20px] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col items-start text-left hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+                            <div class="flex items-center w-full mb-3 space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex-shrink-0 flex items-center justify-center text-gray-600 font-bold text-lg">
+                                    C
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-bold text-sm text-gray-900 tracking-tight">@cata.lifestyle</span>
+                                        <svg class="w-3 h-3 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <div class="text-[11px] font-medium text-gray-400">TikTok</div>
+                                </div>
+                                <div class="flex text-yellow-400 space-x-0.5">
+                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-gray-800 text-[15px] leading-relaxed mb-3 font-medium w-full">"Lo compré hace 3 días y ya me solucionó los problemas de alergia por el aire seco. Amé q sea tan aesthetic 😍"</p>
+                            <div class="mt-auto pt-3 border-t border-gray-50 w-full flex items-center justify-between text-gray-400 text-[11px] font-medium">
+                                <div class="flex items-center space-x-4">
+                                    <span class="flex items-center hover:text-red-500 cursor-pointer transition-colors"><svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg> 140</span>
+                                    <span class="flex items-center hover:text-gray-600 cursor-pointer transition-colors"><svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg> Responder</span>
+                                </div>
+                                <span>Viña del Mar</span>
+                            </div>
                         </div>
-                    </div>
-                    <!-- GIF Right -->
-                    <div class="flex justify-center md:justify-end w-full pl-0 md:pl-8">
-                        <div class="w-full max-w-[380px] rounded-3xl overflow-hidden shadow-lg border border-gray-100 bg-white flex justify-center">
-                            <img src="assets/Snaptik.app_7373690650144853290-ezgif.com-video-to-gif-converter.webp" alt="Cómo Usar el Producto" class="w-full aspect-square object-cover" onerror="this.src='https://placehold.co/800x800/f8fafc/64748b?text=GIF+COMO+USAR'">
+            
+                        <div class="bg-white rounded-[20px] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col items-start text-left hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+                            <div class="flex items-center w-full mb-3 space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex-shrink-0 flex items-center justify-center text-gray-600 font-bold text-lg">
+                                    F
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-bold text-sm text-gray-900 tracking-tight">Felipe M.</span>
+                                        <svg class="w-3 h-3 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <div class="text-[11px] font-medium text-gray-400">X (Twitter)</div>
+                                </div>
+                                <div class="flex text-yellow-400 space-x-0.5">
+                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-gray-800 text-[15px] leading-relaxed mb-3 font-medium w-full">"Confirmo que es el mejor setup upgrade que he hecho este año. El nivel del vapor es brutal y el rgb le da todo el toque."</p>
+                            <div class="mt-auto pt-3 border-t border-gray-50 w-full flex items-center justify-between text-gray-400 text-[11px] font-medium">
+                                <div class="flex items-center space-x-4">
+                                    <span class="flex items-center hover:text-red-500 cursor-pointer transition-colors"><svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg> 181</span>
+                                    <span class="flex items-center hover:text-gray-600 cursor-pointer transition-colors"><svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg> Responder</span>
+                                </div>
+                                <span>Santiago</span>
+                            </div>
                         </div>
-                    </div>
+            
+                        <div class="bg-white rounded-[20px] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col items-start text-left hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+                            <div class="flex items-center w-full mb-3 space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex-shrink-0 flex items-center justify-center text-gray-600 font-bold text-lg">
+                                    D
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="font-bold text-sm text-gray-900 tracking-tight">@dani_wellness</span>
+                                        <svg class="w-3 h-3 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <div class="text-[11px] font-medium text-gray-400">TikTok</div>
+                                </div>
+                                <div class="flex text-yellow-400 space-x-0.5">
+                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-gray-800 text-[15px] leading-relaxed mb-3 font-medium w-full">"Literalmente es como tener una chimenea en miniatura que no quema jaja. Lo dejo prendido toda la noche y me relaja al 100"</p>
+                            <div class="mt-auto pt-3 border-t border-gray-50 w-full flex items-center justify-between text-gray-400 text-[11px] font-medium">
+                                <div class="flex items-center space-x-4">
+                                    <span class="flex items-center hover:text-red-500 cursor-pointer transition-colors"><svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg> 222</span>
+                                    <span class="flex items-center hover:text-gray-600 cursor-pointer transition-colors"><svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg> Responder</span>
+                                </div>
+                                <span>Ñuñoa</span>
+                            </div>
+                        </div>
+            
                 </div>
             </div>
         </section>
@@ -463,43 +346,34 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
         <!-- NUEVA SECCIÓN DE VIDEOS TIKTOK -->
         <section class="py-12 md:py-16 bg-white">
             <div class="container mx-auto px-6 text-center max-w-5xl">
-                <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-8 tracking-tighter">Viral en TikTok</h3>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3 tracking-tighter">Lo que todos dicen en TikTok</h3>
+                <p class="text-base text-gray-600 mb-10 max-w-2xl mx-auto">Videos reales de nuestra comunidad probando el efecto llama 3D.</p>
                 
                 <div class="flex overflow-x-auto justify-start lg:justify-center gap-6 snap-x snap-mandatory pb-6 px-4" style="-ms-overflow-style: none; scrollbar-width: none;">
-                    {% if tiktok_videos %}
-                        {% for video_id in tiktok_videos %}
-                        <div class="snap-center shrink-0 w-[325px] relative">
+                    <!-- TikTok 1 -->
+                    <div class="snap-center shrink-0 w-[325px] relative">
                         <!-- Escudo Total Anti-Fuga -->
                         <div class="absolute inset-0 w-full h-full z-50 bg-transparent cursor-default"></div>
-                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@user/video/{{ video_id }}" data-video-id="{{ video_id }}" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-                                <section></section>
-                            </blockquote>
-                        </div>
-                        {% endfor %}
-                    {% else %}
-                        <!-- Fallback TikToks -->
-                        <div class="snap-center shrink-0 w-[325px] relative">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@diffuserpro2/video/7263192751708130602" data-video-id="7263192751708130602" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+                            <section></section>
+                        </blockquote>
+                    </div>
+                    <!-- TikTok 2 -->
+                    <div class="snap-center shrink-0 w-[325px] relative">
                         <!-- Escudo Total Anti-Fuga -->
                         <div class="absolute inset-0 w-full h-full z-50 bg-transparent cursor-default"></div>
-                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@diffuserpro2/video/7263192751708130602" data-video-id="7263192751708130602" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-                                <section></section>
-                            </blockquote>
-                        </div>
-                        <div class="snap-center shrink-0 w-[325px] relative">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eskahome/video/7137111577060199686" data-video-id="7137111577060199686" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+                            <section></section>
+                        </blockquote>
+                    </div>
+                    <!-- TikTok 3 -->
+                    <div class="snap-center shrink-0 w-[325px] relative">
                         <!-- Escudo Total Anti-Fuga -->
                         <div class="absolute inset-0 w-full h-full z-50 bg-transparent cursor-default"></div>
-                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eskahome/video/7137111577060199686" data-video-id="7137111577060199686" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-                                <section></section>
-                            </blockquote>
-                        </div>
-                        <div class="snap-center shrink-0 w-[325px] relative">
-                        <!-- Escudo Total Anti-Fuga -->
-                        <div class="absolute inset-0 w-full h-full z-50 bg-transparent cursor-default"></div>
-                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@vaperwave/video/7434815922885512480" data-video-id="7434815922885512480" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-                                <section></section>
-                            </blockquote>
-                        </div>
-                    {% endif %}
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@vaperwave/video/7434815922885512480" data-video-id="7434815922885512480" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+                            <section></section>
+                        </blockquote>
+                    </div>
                 </div>
             </div>
             
@@ -507,34 +381,207 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
 
         
 
-        <!-- 8. Objection Handling Section Removed -->
+        <!-- 2. Problem Section -->
+        <section class="bg-gray-50/70 py-12 md:py-16">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tighter text-gray-900 mb-3">El Ruido Constante del Mundo Moderno</h2>
+                <p class="text-base text-gray-600 leading-relaxed">El estrés diario no te deja desconectar. Tu hogar debería ser tu refugio, un lugar para recargar energías de verdad.</p>
+            </div>
+        </section>
+
+        <!-- 3. Solution Section -->
+        <section class="container mx-auto px-6 py-12 md:py-16">
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto">
+                <div class="text-left">
+                    <span class="text-xs font-bold text-indigo-600 tracking-wider mb-2 block">Respira Profundo</span>
+                    <h2 class="text-2xl md:text-3xl font-bold tracking-tighter text-gray-900 mb-3">Crea tu Propio Santuario de Calma</h2>
+                    <p class="text-base text-gray-600 leading-relaxed mb-5">Una pieza de diseño que fusiona aromaterapia con un hipnótico efecto de llama. Transforma cualquier espacio en tu oasis de calma.</p>
+                    <button onclick="document.getElementById('checkoutModal').classList.remove('hidden')" class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg text-base transition-colors">
+                        Quiero el mío
+                    </button>
+                </div>
+                <div class="w-full h-auto aspect-[4/5] sm:aspect-square bg-gray-50 rounded-3xl flex items-center justify-center overflow-hidden border border-gray-100 shadow-sm">
+                    <!-- Image path: assets/real_humidifier_2.png -->
+                    <img src="assets/real_humidifier_2.png" alt="Humidificador Difusor Llama 3D en una mesa de noche junto a libros" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Benefits Section -->
+        <section class="bg-gray-50/70 py-12 md:py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold tracking-tighter text-gray-900 mb-3">Bienestar en Cada Detalle</h2>
+                    <p class="text-base text-gray-600 leading-relaxed">Una experiencia diseñada para elevar tu bienestar diario.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100">
+                        <h3 class="font-bold text-base mb-2">Atmósfera de Relajación Profunda</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">El suave murmullo del agua y el efecto visual de la llama calman la mente, reduciendo el estrés y la ansiedad al instante.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100">
+                        <h3 class="font-bold text-base mb-2">Aromaterapia Personalizada</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Añade tus aceites esenciales favoritos para purificar el aire, mejorar tu concentración o prepararte para un sueño reparador.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100">
+                        <h3 class="font-bold text-base mb-2">Diseño Minimalista y Sofisticado</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Su estética moderna y elegante complementa cualquier decoración, convirtiéndose en un punto focal de conversación y buen gusto.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100">
+                        <h3 class="font-bold text-base mb-2">Mejora la Calidad del Aire</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Humidifica el ambiente para combatir la resequedad, aliviar alergias y cuidar tu piel, especialmente en los meses más secos.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. How It Works Section -->
+        <section class="container mx-auto px-6 py-12 md:py-16">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tighter text-gray-900 mb-3">Simple, Intuitivo, Efectivo</h2>
+                <p class="text-base text-gray-600 leading-relaxed">Disfrutar de tu momento de calma es tan fácil como seguir estos tres pasos.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                
+                <div class="flex flex-col items-center">
+                    <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg text-gray-900 mb-4">1</div>
+                    <h3 class="font-bold text-base mb-2">Paso 1: Añade Agua</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Levanta la cubierta y llena el depósito con agua purificada hasta la marca indicada.</p>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg text-gray-900 mb-4">2</div>
+                    <h3 class="font-bold text-base mb-2">Paso 2: Agrega Esencia</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Vierte 2 a 3 gotas de tu aceite esencial preferido directamente en el agua.</p>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg text-gray-900 mb-4">3</div>
+                    <h3 class="font-bold text-base mb-2">Paso 3: Enciende y Disfruta</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Conecta el dispositivo, presiona el botón y déjate envolver por la atmósfera de tranquilidad que crea.</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- 8. Objection Handling Section -->
+        <section class="container mx-auto px-6 py-12 md:py-16">
+            <div class="grid md:grid-cols-2 gap-12 items-center bg-black text-white p-8 md:p-12 rounded-3xl shadow-xl">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Diseñado para tu Tranquilidad</h2>
+                    <p class="text-lg text-gray-300 leading-relaxed">Entendemos tus dudas. Aquí te explicamos por qué nuestro difusor es una inversión segura en tu bienestar.</p>
+                </div>
+                <div class="space-y-6">
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="text-emerald-400 mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <div>
+                            <h4 class="font-bold">¿Es seguro tenerlo encendido por la noche?</h4>
+                            <p class="text-gray-400 text-sm">Absolutamente. Cuenta con un sistema de apagado automático que desactiva el dispositivo cuando el agua se agota, garantizando tu seguridad y la durabilidad del producto.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="text-emerald-400 mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <div>
+                            <h4 class="font-bold">¿El 'fuego' es real? ¿Genera calor?</h4>
+                            <p class="text-gray-400 text-sm">El efecto de llama es una ilusión óptica creada por luces LED y vapor de agua frío. Es completamente seguro al tacto y no representa ningún riesgo de quemadura.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="text-emerald-400 mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <div>
+                            <h4 class="font-bold">¿Requiere mucho mantenimiento?</h4>
+                            <p class="text-gray-400 text-sm">Su diseño está pensado para ser práctico. Solo necesita una limpieza suave con un paño cada cierto tiempo para mantener su funcionamiento óptimo. Sin filtros complicados ni piezas difíciles de alcanzar.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
 
         <!-- 9. FAQ Section -->
-        <section id="faq" class="container mx-auto px-6 py-16 md:py-24 max-w-3xl scroll-mt-20">
+        <section class="container mx-auto px-6 py-16 md:py-24 max-w-3xl">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-gray-900 mb-4">Preguntas Frecuentes</h2>
                 <p class="text-lg text-gray-600">Resolvemos tus dudas para que compres con total confianza.</p>
             </div>
             <div class="space-y-4">
-                {% for faq in faqs %}
-                <details class="group {% if not loop.last %}border-b border-gray-200{% endif %} pb-4">
+                
+                <details class="group border-b border-gray-200 pb-4">
                     <summary class="flex justify-between items-center cursor-pointer list-none">
-                        <span class="font-medium text-gray-900">{{ faq.question }}</span>
+                        <span class="font-medium text-gray-900">¿Qué tipo de aceites esenciales puedo usar?</span>
                         <span class="transition-transform transform group-open:rotate-180">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </span>
                     </summary>
-                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">{{ faq.answer }}</p>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">Recomendamos usar aceites esenciales 100% puros y naturales para una experiencia óptima y para cuidar el mecanismo del difusor.</p>
                 </details>
-                {% endfor %}
+                
+                <details class="group border-b border-gray-200 pb-4">
+                    <summary class="flex justify-between items-center cursor-pointer list-none">
+                        <span class="font-medium text-gray-900">¿Cuánto dura el agua en el depósito?</span>
+                        <span class="transition-transform transform group-open:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">Con el depósito lleno, puede funcionar de forma continua entre 6 y 8 horas, dependiendo de la intensidad de la niebla que elijas.</p>
+                </details>
+                
+                <details class="group border-b border-gray-200 pb-4">
+                    <summary class="flex justify-between items-center cursor-pointer list-none">
+                        <span class="font-medium text-gray-900">¿Puedo usarlo solo como humidificador, sin aceites?</span>
+                        <span class="transition-transform transform group-open:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">Sí, puedes usarlo solo con agua para humidificar el ambiente, especialmente útil para aliviar la sequedad y mejorar la respiración.</p>
+                </details>
+                
+                <details class="group border-b border-gray-200 pb-4">
+                    <summary class="flex justify-between items-center cursor-pointer list-none">
+                        <span class="font-medium text-gray-900">¿Qué significa que sea pago contra entrega?</span>
+                        <span class="transition-transform transform group-open:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">Significa que tu compra es 100% libre de riesgos. Haces tu pedido ahora sin pagar nada por adelantado, y solo pagas en efectivo o transferencia cuando el repartidor te entrega el producto en tus manos.</p>
+                </details>
+                
+                <details class="group border-b border-gray-200 pb-4">
+                    <summary class="flex justify-between items-center cursor-pointer list-none">
+                        <span class="font-medium text-gray-900">¿Cuáles son los tiempos de envío?</span>
+                        <span class="transition-transform transform group-open:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">Los envíos en la Región Metropolitana tardan entre 24 y 48 horas hábiles. Para otras regiones, el tiempo estimado es de 2 a 5 días hábiles.</p>
+                </details>
+                
+                <details class="group  pb-4">
+                    <summary class="flex justify-between items-center cursor-pointer list-none">
+                        <span class="font-medium text-gray-900">¿El material es de buena calidad?</span>
+                        <span class="transition-transform transform group-open:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">Utilizamos materiales ABS de alta calidad, libres de BPA, para asegurar un producto duradero, seguro y con un acabado premium.</p>
+                </details>
+                
             </div>
         </section>
 
         <!-- 10. Final CTA Section -->
         <section class="container mx-auto px-6 py-12 md:py-16">
             <div class="bg-gray-50 rounded-3xl p-8 md:p-16 text-center flex flex-col items-center">
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-gray-900 mb-4">{{ cta_title }}</h2>
-                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">{{ cta_desc }}</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-gray-900 mb-4">Es Momento de Invertir en tu Calma</h2>
+                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">Añade el Humidificador Llama 3D a tu espacio y redescubre el placer de un hogar que realmente se siente como un refugio.</p>
                 <button onclick="document.getElementById('checkoutModal').classList.remove('hidden')" class="w-full max-w-xs bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3 px-4 rounded-xl text-base transition-transform transform hover:scale-105 active:scale-95 shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2">
                     COMPRAR CON PAGO EN CASA
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -649,36 +696,9 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
         </div>
     </div>
 
-    <style>
-        .animate-fade-in {
-            animation: fadeIn 0.3s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-
     <script>
-        function switchTab(tabId) {
-            const tabs = ['tab-reviews', 'tab-desc', 'tab-delivery'];
-            tabs.forEach(id => {
-                document.getElementById(id).classList.add('hidden');
-                document.getElementById(id).classList.remove('block');
-                
-                const btn = document.getElementById('btn-' + id);
-                btn.className = "flex-1 py-3.5 px-4 text-center font-semibold text-[15px] text-gray-500 hover:text-gray-800 transition-colors rounded-t-2xl hover:bg-gray-200/50";
-            });
-            
-            document.getElementById(tabId).classList.remove('hidden');
-            document.getElementById(tabId).classList.add('block');
-            
-            const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.className = "flex-1 py-3.5 px-4 text-center font-semibold text-[15px] transition-colors rounded-t-2xl bg-[#f9f9f9] text-gray-900 relative";
-        }
-
         let selectedUnits = '1 Unidad';
-        let selectedPrice = '{{ offer_price }}';
+        let selectedPrice = '$34.990';
 
         function selectPromo(units, price) {
             selectedUnits = units === 1 ? '1 Unidad' : '2 Unidades';
@@ -821,11 +841,11 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
             </div>
           <div class="bg-gray-50 p-3 rounded-xl border border-gray-100 flex items-center gap-3 mb-5">
             <div class="flex-1">
-                <span class="block text-xs font-bold text-gray-900 leading-tight">{{ product_name }}</span>
+                <span class="block text-xs font-bold text-gray-900 leading-tight">Humidificador Difusor Aromaterapia Llama 3D</span>
                 <span id="modal-units" class="block text-[10px] text-gray-500 mt-0.5">1 Unidad</span>
             </div>
             <div class="text-right">
-                <span id="modal-price" class="block text-base font-bold text-emerald-600">{{ offer_price }}</span>
+                <span id="modal-price" class="block text-base font-bold text-emerald-600">$34.990</span>
                 <span class="block text-[9px] text-indigo-600 font-bold uppercase mt-0.5">ENVÍO GRATIS</span>
             </div>
           </div>
@@ -929,7 +949,7 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
 
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/56979460119?text=%C2%A1Hola%20MUNDO%20AURA%21%20tengo%20dudas%20sobre...%20{{ product_name }}" target="_blank" class="fixed bottom-6 right-6 z-50 transition-transform hover:scale-110 drop-shadow-2xl" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/56979460119?text=%C2%A1Hola%20MUNDO%20AURA%21%20tengo%20dudas%20sobre...%20Humidificador%20Difusor%20Aromaterapia%20Llama%203D" target="_blank" class="fixed bottom-6 right-6 z-50 transition-transform hover:scale-110 drop-shadow-2xl" aria-label="Chat on WhatsApp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-14 h-14 md:w-16 md:h-16">
     </a>
     <script async src="https://www.tiktok.com/embed.js"></script>
@@ -1270,7 +1290,6 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
       });
   }
 </script>
-<script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 
 </html>

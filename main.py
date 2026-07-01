@@ -101,6 +101,15 @@ def print_pipeline_summary(state: ProductState, execution_time: float):
     logger.info(f"💰 Costo: ${state.target_cost} | Precio: ${state.suggested_price} | Margen: {state.profit_margin}X")
     logger.info(f"🎨 Assets Generados: {len(state.image_assets)} imágenes")
     logger.info(f"📝 Copy: {state.generated_copy.get('headline', 'N/A')[:60]}...")
+    logger.info(f"🎬 Guiones UGC: {len(state.ugc_scripts)} generados listos para grabar")
+    
+    # Save scripts to a file so the user can read them
+    if state.ugc_scripts:
+        import json
+        with open("guiones_ugc.json", "w", encoding="utf-8") as f:
+            json.dump([s.model_dump() if hasattr(s, "model_dump") else s for s in state.ugc_scripts], f, indent=4, ensure_ascii=False)
+        logger.info("📄 Archivo 'guiones_ugc.json' guardado exitosamente con los guiones")
+
     logger.info(f"🌐 Landing Page: {state.deployed_url}")
     logger.info(f"📱 Campaña Meta Ads: {state.instagram_ad_draft_id} (Estado: {state.campaign_status})")
     logger.info("")

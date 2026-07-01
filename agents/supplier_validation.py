@@ -123,7 +123,7 @@ async def scrape_supplier_profile(supplier_url: str) -> Dict:
     # En producción: scraping real de AliExpress
     
     # Proveedores "buenos" (IDs que terminan en números altos)
-    if int(supplier_id[-1]) >= 7:
+    if supplier_id == "unknown" or int(supplier_id[-1]) >= 7:
         profile = {
             "supplier_id": supplier_id,
             "supplier_name": f"Premium Electronics Store {supplier_id[:4]}",

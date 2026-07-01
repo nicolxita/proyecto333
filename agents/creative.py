@@ -29,6 +29,15 @@ class MarketingCopy(BaseModel):
 class MarketingAngles(BaseModel):
     angles: list[str] = Field(description="Una lista de exactamente 5 ángulos de marketing basados en psicología del consumidor")
 
+class UgcScript(BaseModel):
+    hook: str = Field(description="Gancho visual y de texto de los primeros 3 segundos")
+    screen_text: str = Field(description="Texto gigante y llamativo para poner en pantalla")
+    voiceover: str = Field(description="Guion exacto para la voz en off o voz robótica")
+    visual_instructions: str = Field(description="Instrucciones sobre qué grabar o mostrar")
+
+class UgcScriptsList(BaseModel):
+    scripts: list[UgcScript] = Field(description="Lista de exactamente 2 guiones generados (1 UGC y 1 Ugly Ad)")
+
 
 def _is_api_key_valid() -> bool:
     """Verifica si la clave de API de Gemini es válida y no es un placeholder."""
@@ -194,14 +203,55 @@ async def _identify_marketing_angles(product_name: str, price: float) -> list:
     # Fallback / Simulación
     logger.info("🎯 [CREATIVE] Identificando ángulos de marketing (SIMULADO)...")
     await asyncio.sleep(0.5)
-    return [
-        "Transformación instantánea del espacio (antes/después)",
-        "Experiencia premium a precio accesible (ancla de valor)",
-        "Escasez artificial (stock limitado, oferta temporal)",
-        "Prueba social (miles de reviews positivas)",
-        "Múltiples casos de uso (versatilidad del producto)"
-    ]
+    return ["Ángulo 1 (Simulado)", "Ángulo 2 (Simulado)", "Ángulo 3", "Ángulo 4", "Ángulo 5"]
 
+async def _generate_ugc_scripts(product_name: str, angles: list[str]) -> list:
+    """
+    Genera guiones para anuncios de TikTok/Reels basados en UGC y Ugly Ads.
+    """
+    if GEMINI_SDK_AVAILABLE and _is_api_key_valid():
+        logger.info("🎬 [CREATIVE] Generando guiones UGC y Ugly Ads con Gemini API...")
+        try:
+            client = genai.Client(api_key=settings.gemini_api_key)
+            prompt = f"""
+            Eres un experto creador de contenido para TikTok y Dropshipping.
+            Necesito 2 guiones EXACTOS y listos para grabar para el producto: {product_name}.
+            Los ángulos de marketing sugeridos son: {angles}.
+            
+            Guion 1 (UGC Natural): Debe parecer un review genuino grabado por un cliente en su casa.
+            Guion 2 (Ugly Ad): Debe ser un video tipo 'shitpost' muy llamativo, con texto gigante y voz robótica, para interrumpir el scroll.
+            
+            Asegúrate de que los hooks de los primeros 3 segundos sean extremadamente magnéticos y generen curiosidad o alivio a un problema.
+            """
+            
+            loop = asyncio.get_running_loop()
+            response = await loop.run_in_executor(
+                None,
+                lambda: client.models.generate_content(
+                    model='gemini-2.5-pro',
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=0.7,
+                        response_mime_type="application/json",
+                        response_schema=UgcScriptsList,
+                    )
+                )
+            )
+            import json
+            result = json.loads(response.text)
+            scripts = result.get("scripts", [])
+            logger.info(f"✅ [CREATIVE] {len(scripts)} guiones generados por Gemini")
+            return scripts
+        except Exception as e:
+            logger.error(f"❌ [CREATIVE] Error al generar guiones: {str(e)}")
+            
+    # Fallback
+    logger.info("🎬 [CREATIVE] Generando guiones (SIMULADO)...")
+    await asyncio.sleep(1.0)
+    return [
+        {"hook": "Simulado 1", "screen_text": "Texto", "voiceover": "Voz", "visual_instructions": "Grabar"},
+        {"hook": "Simulado 2", "screen_text": "Texto", "voiceover": "Voz", "visual_instructions": "Grabar"}
+    ]
 
 async def run_creative_agent(state: ProductState) -> ProductState:
     """
@@ -217,15 +267,19 @@ async def run_creative_agent(state: ProductState) -> ProductState:
     
     copy, images, angles = await asyncio.gather(copy_task, images_task, angles_task)
     
+    # Generate scripts sequentially after angles are ready
+    scripts = await _generate_ugc_scripts(state.product_name, angles)
+    
     # Actualizar estado global
     state.generated_copy = copy
     state.image_assets = images
     state.marketing_angles = angles
+    state.ugc_scripts = scripts
     state.pipeline_stage = "creative_completed"
     
     logger.info(
         f"✅ [CREATIVE] Contenido generado exitosamente: "
-        f"{len(images)} imágenes, {len(angles)} ángulos, copy completo"
+        f"{len(images)} imágenes, {len(angles)} ángulos, {len(scripts)} guiones, copy completo"
     )
     
     return state

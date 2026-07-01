@@ -27,6 +27,8 @@ class ProductState(BaseModel):
         description="Copy generado con keys: headline, body, cta"
     )
     image_assets: List[str] = Field(default_factory=list, description="URLs de imágenes generadas")
+    ugc_scripts: List[Dict[str, str]] = Field(default_factory=list, description="Guiones UGC generados")
+    
     
     # Deployment (DevOps Agent)
     deployed_url: str = Field(default="", description="URL de la tienda desplegada")
