@@ -1,6 +1,6 @@
 <!--
 PHASE 1: PRODUCT INTELLIGENCE
-- Product: Humidificador Difusor Aromaterapia Llama 3D. A functional wellness device presented as a premium design object.
+- Product: Aceite De Orégano con Semilla Negra. A functional wellness device presented as a premium design object.
 - Problem Solved: Dry air, unpleasant odors, daily stress, lack of ambiance, and uninspiring home decor.
 - Desired Outcome: A relaxing, visually pleasing, and fragrant home or office environment. Improved air quality and a sense of calm.
 - Emotional Desire: To create a personal sanctuary, feel relaxed and sophisticated, and own a unique conversation piece. The "flame" effect taps into a primal feeling of warmth and comfort.
@@ -141,19 +141,24 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                 <div class="lg:col-span-6 flex flex-col-reverse md:flex-row gap-4 w-full max-w-[500px] mx-auto lg:ml-auto lg:mr-0 min-w-0">
                     <!-- Thumbnails -->
                     <div class="flex flex-row md:flex-col gap-3 md:gap-4 shrink-0 md:w-20">
-                        <button onclick="document.getElementById('main-product-image').src='{{ image_assets[0] }}'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden ring-2 ring-indigo-500 hover:opacity-80 transition-opacity">
-                            <img src="{{ image_assets[0] }}" class="w-full h-full object-contain">
+                        <button onclick="document.getElementById('main-product-image').src='assets/1.webp'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden ring-2 ring-indigo-500 hover:opacity-80 transition-opacity">
+                            <img src="assets/fotos producto/1.png" class="w-full h-full object-contain">
                         </button>
-                        <button onclick="document.getElementById('main-product-image').src='{% if image_assets|length > 1 %}{{ image_assets[1] }}{% else %}{{ image_assets[0] }}{% endif %}'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden ring-1 ring-gray-200 hover:opacity-80 transition-opacity">
-                            <img src="{% if image_assets|length > 1 %}{{ image_assets[1] }}{% else %}{{ image_assets[0] }}{% endif %}" class="w-full h-full object-contain">
+                        <button onclick="document.getElementById('main-product-image').src='assets/2.webp'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden ring-1 ring-gray-200 hover:opacity-80 transition-opacity">
+                            <img src="assets/fotos producto/2.png" class="w-full h-full object-contain">
+                        <button onclick="document.getElementById('main-product-image').src=this.querySelector('img').src" class="aspect-square bg-gray-50 rounded-xl md:rounded-2xl border-2 border-transparent focus:border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden">
+                            <img src="assets/fotos producto/3.png" class="w-full h-full object-contain">
                         </button>
-                        <button onclick="document.getElementById('main-product-image').src='{% if image_assets|length > 2 %}{{ image_assets[2] }}{% else %}{{ image_assets[0] }}{% endif %}'" class="w-16 md:w-full aspect-square rounded-xl overflow-hidden ring-1 ring-gray-200 hover:opacity-80 transition-opacity">
-                            <img src="{% if image_assets|length > 2 %}{{ image_assets[2] }}{% else %}{{ image_assets[0] }}{% endif %}" class="w-full h-full object-contain">
+                        <button onclick="document.getElementById('main-product-image').src=this.querySelector('img').src" class="aspect-square bg-gray-50 rounded-xl md:rounded-2xl border-2 border-transparent focus:border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden">
+                            <img src="assets/fotos producto/4.png" class="w-full h-full object-contain">
+                        </button>
+                        <button onclick="document.getElementById('main-product-image').src=this.querySelector('img').src" class="aspect-square bg-gray-50 rounded-xl md:rounded-2xl border-2 border-transparent focus:border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden">
+                            <img src="assets/fotos producto/tragar.png" class="w-full h-full object-contain">
                         </button>
                     </div>
                     <!-- Main Image -->
-                    <div class="flex-1 w-full relative flex items-center justify-center overflow-hidden" style="aspect-ratio: 4/5;">
-                        <img id="main-product-image" src="{{ image_assets[0] }}" alt="Producto" class="w-full h-full object-contain">
+                    <div class="w-full md:w-[85%] aspect-square bg-gray-50 rounded-2xl md:rounded-3xl border border-gray-100 p-4 md:p-8 relative overflow-hidden shadow-sm flex items-center justify-center">
+                        <img id="main-product-image" src="assets/fotos producto/1.png" alt="Producto" class="w-full h-full object-contain">
                     </div>
                 </div>
                 <div class="lg:col-span-6 w-full min-w-0">
@@ -165,7 +170,7 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                             </div>
                         </div>
                         <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight tracking-tight mb-2">
-                            {{ product_name }}
+                            Aceite De Orégano 6000 Mg con Semilla Negra
                         </h1>
                         <a href="#reviews" class="flex items-center gap-2 mb-5 text-xs text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer w-fit group">
                             <div class="flex text-amber-400 text-base">★★★★★</div>
@@ -175,8 +180,8 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                             <div>
                             <span class="block text-[10px] font-bold text-gray-500 tracking-wider mb-1">PRECIO DE OFERTA</span>
                             <div class="flex items-end gap-2">
-                                <span class="text-2xl font-extrabold text-emerald-600">{{ offer_price }}</span>
-                                <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1">-50% OFF</span>
+                                <span class="text-2xl font-extrabold text-emerald-600">{{ promo_price }}</span>
+                                <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1">{{ discount_badge }} OFF</span>
                             </div>
                             </div>
                             <div class="text-right">
@@ -186,49 +191,50 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                         </div>
                         
                         <ul class="flex flex-col gap-3 mb-5 mt-5">
-                            {% for point in hero_bullet_points %}
+                            
                             <li class="flex items-center gap-2.5">
                                 <div class="w-5 h-5 rounded-full bg-pink-300 flex items-center justify-center shrink-0 shadow-sm">
                                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
                                 </div>
                                 <div class="text-[14px] font-bold text-gray-900 line-clamp-1">
-                                    {{ point.title }}
+                                    Refuerza tus Defensas Naturales
                                 </div>
                             </li>
-                            {% else %}
+                            
                             <li class="flex items-center gap-2.5">
                                 <div class="w-5 h-5 rounded-full bg-pink-300 flex items-center justify-center shrink-0 shadow-sm">
                                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
                                 </div>
                                 <div class="text-[14px] font-bold text-gray-900 line-clamp-1">
-                                    Formato Gigante de 1 Kilo
+                                    Mejora tu Sistema Inmune y Digestivo
                                 </div>
                             </li>
+                            
                             <li class="flex items-center gap-2.5">
                                 <div class="w-5 h-5 rounded-full bg-pink-300 flex items-center justify-center shrink-0 shadow-sm">
                                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
                                 </div>
                                 <div class="text-[14px] font-bold text-gray-900 line-clamp-1">
-                                    Fórmula Sin Sabor
+                                    Adiós a la Hinchazón y Gases
                                 </div>
                             </li>
-                            {% endfor %}
+                            
                         </ul>
 
                         <div class="mb-5">
                             <span class="block text-[10px] font-bold text-gray-500 tracking-wider mb-2">SELECCIONA TU PROMOCIÓN (ENVÍO GRATIS):</span>
                             <div class="grid grid-cols-2 gap-2" id="promo-selector">
-                            <label onclick="selectPromo(1, '{{ offer_price }}')" id="label-promo-1" class="relative border-2 border-indigo-600 bg-indigo-50/30 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors">
+                            <label onclick="selectPromo(1, '{{ promo_price }}')" id="label-promo-1" class="relative border-2 border-indigo-600 bg-indigo-50/30 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors">
                                 <input type="radio" name="promo" value="1" class="hidden" checked>
                                 <span class="block text-xs font-bold text-gray-900 mb-0.5">Llevar 1 Unidad</span>
                                 <span class="block text-[10px] text-gray-500 mb-1">Precio Unitario</span>
-                                <span class="block font-extrabold text-emerald-600 text-base">{{ offer_price }}</span>
+                                <span class="block font-extrabold text-emerald-600 text-base">{{ promo_price }}</span>
                             </label>
-                            <label onclick="selectPromo(2, '{{ promo_2_price }}')" id="label-promo-2" class="relative border-2 border-gray-100 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors hover:border-indigo-400">
+                            <label onclick="selectPromo(2, '{{ promo2_price }}')" id="label-promo-2" class="relative border-2 border-gray-100 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors hover:border-indigo-400">
                                 <input type="radio" name="promo" value="2" class="hidden">
                                 <span class="block text-xs font-bold text-gray-600 mb-0.5">Llevar 2 Unidades</span>
                                 <span class="block text-[10px] text-indigo-600 font-bold mb-1">Segunda al 50%</span>
-                                <span class="block font-extrabold text-gray-900 text-base">{{ promo_2_price }}</span>
+                                <span class="block font-extrabold text-gray-900 text-base">{{ promo2_price }}</span>
                             </label>
                             </div>
                         </div>
@@ -250,14 +256,14 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                             Paga Contra Entrega
                             </span>
                         </div>
-                    </div>
-                        
+                        <div class="text-center text-xs font-bold text-gray-700 mt-3 bg-indigo-50/50 text-indigo-900 border-indigo-100 p-2.5 rounded-lg border shadow-sm shadow-sm flex items-center justify-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Producto 100% Regulado - Con Registro ISP y Resolución SEREMI de Salud
                         </div>
+                    </div>
                 </div>
             </div>
         </section>
-
-
 
         <!-- Benefits Section (Problem / Solution Block) -->
         <section class="bg-white py-10 md:py-12">
@@ -265,36 +271,55 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                 <div class="grid md:grid-cols-2 gap-8 items-center">
                     <div class="max-w-2xl order-2 md:order-1">
                         <div class="text-left mb-6">
-                            <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3 leading-snug">{{ solution_title | default('Recupera tu Confianza Total con este Tratamiento') }}</h2>
+                            <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3 leading-snug">Tu Reset Intestinal Definitivo</h2>
                             <p class="text-[14px] text-gray-600 leading-relaxed mb-5 font-medium">
-                                {{ problem_statement | default('¿Sufres por cabello débil, uñas quebradizas o te sientes apagada por la mañana? El estrés y el tiempo nos quitan nuestra vitalidad.') }}
+                                ¿Vives con el estómago inflamado, gases después de comer o sientes que todo te cae mal?
                             </p>
                             <div class="bg-gray-100 border-l-4 border-gray-400 p-3 rounded-r-lg">
                                 <p class="text-[14px] font-bold text-gray-800 leading-relaxed">
-                                    {{ solution_desc | default('Nutre tu cuerpo desde adentro y restaura tu vitalidad natural.') }}
+                                    Un limpiador natural que actúa como una "escoba", eliminando bacterias malas mientras desinflama y calma las paredes de tu intestino.
                                 </p>
                             </div>
                         </div>
                         
-                        {% if highlights %}
+                        
                         <ul class="flex flex-col gap-4 text-left">
-                            {% for highlight in highlights %}
+                            
                             <li class="flex items-start gap-2.5">
                                 <div class="mt-1 flex-shrink-0">
                                     <div class="w-2 h-2 rounded-full bg-pink-300 mt-1"></div>
                                 </div>
                                 <div class="text-[14px] text-gray-800 leading-relaxed">
-                                    <strong class="font-extrabold text-gray-900">{{ highlight.title }}:</strong> {{ highlight.description }}
+                                    <strong class="font-extrabold text-gray-900">Acción de Limpieza Profunda:</strong> Combate de raíz el sobrecrecimiento de bacterias (SIBO) y levaduras (Candidiasis).
                                 </div>
                             </li>
-                            {% endfor %}
+                            
+                            <li class="flex items-start gap-2.5">
+                                <div class="mt-1 flex-shrink-0">
+                                    <div class="w-2 h-2 rounded-full bg-pink-300 mt-1"></div>
+                                </div>
+                                <div class="text-[14px] text-gray-800 leading-relaxed">
+                                    <strong class="font-extrabold text-gray-900">Desinflama y Protege:</strong> Su fórmula calmante protege tus paredes intestinales para que no sufras durante el proceso.
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-2.5">
+                                <div class="mt-1 flex-shrink-0">
+                                    <div class="w-2 h-2 rounded-full bg-pink-300 mt-1"></div>
+                                </div>
+                                <div class="text-[14px] text-gray-800 leading-relaxed">
+                                    <strong class="font-extrabold text-gray-900">Adiós a la Hinchazón:</strong> Recupera tu balance microbiótico y vuelve a disfrutar de tus comidas sin malestares crónicos.
+                                </div>
+                            </li>
+                            
                         </ul>
-                        {% endif %}
+                        
                     </div>
                     <!-- GIF Mobile Top, Desktop Right -->
                     <div class="flex justify-center md:justify-end w-full pl-0 md:pl-8 order-1 md:order-2">
                         <div class="w-full max-w-[380px] rounded-3xl overflow-hidden shadow-lg border border-gray-100 bg-white">
-                            <img src="assets/1763131780-1114-ezgif.com-gif-to-webp-converter.webp" alt="Beneficios" class="w-full aspect-square object-cover" onerror="this.src='https://placehold.co/800x800/f8fafc/64748b?text=GIF+BENEFICIOS'">
+                            <!-- Visual / Media -->
+                            <img src="assets/gifs/giforegano.gif" alt="Beneficios" class="w-full aspect-square object-cover" onerror="this.src='https://placehold.co/800x800/f8fafc/64748b?text=GIF+BENEFICIOS'">
                         </div>
                     </div>
                 </div>
@@ -327,21 +352,21 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                         <div id="tab-reviews" class="block animate-fade-in">
                             <h4 class="text-xs font-bold text-gray-500 mb-4 uppercase tracking-wider text-center md:text-left">Testimonios de Facebook</h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    {% if reviews %}
-                        {% for review in reviews %}
+                    
+                        
                         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-3.5 pb-2">
                             <!-- Post Header -->
                             <div class="flex items-center gap-2.5 mb-2.5">
                                 <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-100 to-blue-200 flex items-center justify-center text-blue-800 font-bold text-sm shrink-0">
-                                    {{ review.author[0]|upper if review.author else 'U' }}
+                                    C
                                 </div>
                                 <div class="flex flex-col">
                                     <div class="flex items-center gap-1">
-                                        <span class="font-bold text-[13px] text-gray-900 leading-tight hover:underline cursor-pointer">{{ review.author }}</span>
+                                        <span class="font-bold text-[13px] text-gray-900 leading-tight hover:underline cursor-pointer">Camila Rojas</span>
                                     </div>
                                     <div class="flex items-center text-[11px] text-gray-500 gap-1">
-                                        {% set times = ['Hace 2 h', 'Hace 22 h', 'Hace 3 d'] %}
-                                        <span>{{ times[loop.index0] if loop.index0 < 3 else 'Hace ' ~ (loop.index * 2) ~ ' h' }}</span>
+                                        
+                                        <span>Hace 2 h</span>
                                         <span>•</span>
                                         <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 16 16"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4.4 11.5c-.2.2-.6.2-.8 0L8 8.4V4c0-.3.2-.5.5-.5s.5.2.5.5v4l3.4 2.7c.2.2.2.6 0 .8z"/></svg>
                                     </div>
@@ -349,12 +374,12 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                             </div>
                             
                             <!-- Post Body -->
-                            <p class="text-[13px] text-gray-900 mb-2.5 whitespace-pre-line leading-relaxed">{{ review.quote }}</p>
+                            <p class="text-[13px] text-gray-900 mb-2.5 whitespace-pre-line leading-relaxed">Estuve meses con el estómago súper inflamado (creo que era SIBO) y esto fue lo único que me ayudó. Llevo 2 semanas tomándolo y ya no me hincho después de almorzar.</p>
                             
                             <!-- Placeholder Photo -->
                             <div class="w-full bg-gray-100 rounded-lg overflow-hidden border border-gray-100 mb-2.5">
-                                {% set avif_files = ['l.avif', 'l (1).avif', 'l (2).avif'] %}
-                                <img src="assets/{{ avif_files[loop.index0] if loop.index0 < 3 else 'review_' ~ loop.index ~ '.jpg' }}" alt="Foto de reseña" class="w-full h-auto object-contain max-h-[350px]" onerror="this.style.display='none'">
+                                
+                                <img src="assets/reseñas/l.avif" alt="Foto de reseña" class="w-full h-auto object-contain max-h-[350px]" onerror="this.style.display='none'">
                             </div>
                             
                             <!-- Reactions -->
@@ -368,10 +393,10 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                                         <svg viewBox="0 0 1024 1024" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><circle cx="512" cy="512" r="512" fill="#f33e58"/><path d="M728.3 361.6c-48.4-48.4-126.9-48.4-175.3 0L512 402.6l-41-41c-48.4-48.4-126.9-48.4-175.3 0-48.4 48.4-48.4 126.9 0 175.3L512 753.2l216.3-216.3c48.4-48.4 48.4-126.9 0-175.3z" fill="#fff"/></svg>
                                     </div>
                                     </div>
-                                    <span class="ml-1">{{ loop.index * 5 + 12 }}</span>
+                                    <span class="ml-1">17</span>
                                 </div>
                                 <div>
-                                    <span class="hover:underline cursor-pointer">{{ loop.index + 2 }} comentarios</span>
+                                    <span class="hover:underline cursor-pointer">3 comentarios</span>
                                 </div>
                             </div>
                             
@@ -391,17 +416,143 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                                 </button>
                             </div>
                         </div>
-                        {% endfor %}
-                    {% endif %}
+                        
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-3.5 pb-2">
+                            <!-- Post Header -->
+                            <div class="flex items-center gap-2.5 mb-2.5">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-100 to-blue-200 flex items-center justify-center text-blue-800 font-bold text-sm shrink-0">
+                                    J
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-1">
+                                        <span class="font-bold text-[13px] text-gray-900 leading-tight hover:underline cursor-pointer">Javiera Soto</span>
+                                    </div>
+                                    <div class="flex items-center text-[11px] text-gray-500 gap-1">
+                                        
+                                        <span>Hace 22 h</span>
+                                        <span>•</span>
+                                        <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 16 16"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4.4 11.5c-.2.2-.6.2-.8 0L8 8.4V4c0-.3.2-.5.5-.5s.5.2.5.5v4l3.4 2.7c.2.2.2.6 0 .8z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Post Body -->
+                            <p class="text-[13px] text-gray-900 mb-2.5 whitespace-pre-line leading-relaxed">Al principio dudaba por el sabor, pero al ser en cápsulas es súper fácil de tragar y no se siente nada del orégano. Mi digestión ha mejorado muchísimo, ya no sufro de pesadez.</p>
+                            
+                            <!-- Placeholder Photo -->
+                            <div class="w-full bg-gray-100 rounded-lg overflow-hidden border border-gray-100 mb-2.5">
+                                
+                                <img src="assets/reseñas/l (1).avif" alt="Foto de reseña" class="w-full h-auto object-contain max-h-[350px]" onerror="this.style.display='none'">
+                            </div>
+                            
+                            <!-- Reactions -->
+                            <div class="flex items-center justify-between text-[12px] text-gray-500 py-1.5 border-b border-gray-100">
+                                <div class="flex items-center gap-1">
+                                    <div class="flex -space-x-1">
+                                        <div class="w-4 h-4 rounded-full border border-white flex items-center justify-center overflow-hidden shrink-0">
+                                        <svg viewBox="0 0 1024 1024" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><circle cx="512" cy="512" r="512" fill="#1877f2"/><path d="M738.1 486.2c0-37.4-28-67.7-62.5-67.7H543.8c11-37.7 21.6-84.3 21.6-118 0-41.2-22.3-76.4-56-76.4-18.8 0-35.7 9-47 23.3-15.6 19.8-19.3 43-22.8 62.7-5.3 30.6-25.1 76-52.6 117.8L377 441.7v333.6l10-6.6c27.6-18.4 60.5-28.1 94.4-28.1h194.2c34.5 0 62.5-30.3 62.5-67.7V486.2z" fill="#fff"/><path d="M366.1 441.7H262.8c-12 0-21.7 9.7-21.7 21.7v290.1c0 12 9.7 21.7 21.7 21.7h103.2V441.7z" fill="#fff"/></svg>
+                                    </div>
+                                        <div class="w-4 h-4 rounded-full border border-white flex items-center justify-center overflow-hidden shrink-0">
+                                        <svg viewBox="0 0 1024 1024" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><circle cx="512" cy="512" r="512" fill="#f33e58"/><path d="M728.3 361.6c-48.4-48.4-126.9-48.4-175.3 0L512 402.6l-41-41c-48.4-48.4-126.9-48.4-175.3 0-48.4 48.4-48.4 126.9 0 175.3L512 753.2l216.3-216.3c48.4-48.4 48.4-126.9 0-175.3z" fill="#fff"/></svg>
+                                    </div>
+                                    </div>
+                                    <span class="ml-1">22</span>
+                                </div>
+                                <div>
+                                    <span class="hover:underline cursor-pointer">4 comentarios</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="flex items-center justify-between pt-1">
+                                <button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-gray-600 hover:bg-gray-50 rounded-lg font-semibold text-[11px] transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.514"></path></svg>
+                                    Me gusta
+                                </button>
+                                <button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-gray-600 hover:bg-gray-50 rounded-lg font-semibold text-[11px] transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                    Comentar
+                                </button>
+                                <button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-gray-600 hover:bg-gray-50 rounded-lg font-semibold text-[11px] transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                                    Compartir
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-3.5 pb-2">
+                            <!-- Post Header -->
+                            <div class="flex items-center gap-2.5 mb-2.5">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-100 to-blue-200 flex items-center justify-center text-blue-800 font-bold text-sm shrink-0">
+                                    F
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-1">
+                                        <span class="font-bold text-[13px] text-gray-900 leading-tight hover:underline cursor-pointer">Francisca López</span>
+                                    </div>
+                                    <div class="flex items-center text-[11px] text-gray-500 gap-1">
+                                        
+                                        <span>Hace 3 d</span>
+                                        <span>•</span>
+                                        <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 16 16"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4.4 11.5c-.2.2-.6.2-.8 0L8 8.4V4c0-.3.2-.5.5-.5s.5.2.5.5v4l3.4 2.7c.2.2.2.6 0 .8z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Post Body -->
+                            <p class="text-[13px] text-gray-900 mb-2.5 whitespace-pre-line leading-relaxed">Me llegó al día siguiente! Lo empecé a tomar porque siempre me resfriaba con los cambios de clima y mis defensas andaban bajas. Llevo mi primer ciclo y me siento excelente, súper recomendado.</p>
+                            
+                            <!-- Placeholder Photo -->
+                            <div class="w-full bg-gray-100 rounded-lg overflow-hidden border border-gray-100 mb-2.5">
+                                
+                                <img src="assets/reseñas/l (2).avif" alt="Foto de reseña" class="w-full h-auto object-contain max-h-[350px]" onerror="this.style.display='none'">
+                            </div>
+                            
+                            <!-- Reactions -->
+                            <div class="flex items-center justify-between text-[12px] text-gray-500 py-1.5 border-b border-gray-100">
+                                <div class="flex items-center gap-1">
+                                    <div class="flex -space-x-1">
+                                        <div class="w-4 h-4 rounded-full border border-white flex items-center justify-center overflow-hidden shrink-0">
+                                        <svg viewBox="0 0 1024 1024" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><circle cx="512" cy="512" r="512" fill="#1877f2"/><path d="M738.1 486.2c0-37.4-28-67.7-62.5-67.7H543.8c11-37.7 21.6-84.3 21.6-118 0-41.2-22.3-76.4-56-76.4-18.8 0-35.7 9-47 23.3-15.6 19.8-19.3 43-22.8 62.7-5.3 30.6-25.1 76-52.6 117.8L377 441.7v333.6l10-6.6c27.6-18.4 60.5-28.1 94.4-28.1h194.2c34.5 0 62.5-30.3 62.5-67.7V486.2z" fill="#fff"/><path d="M366.1 441.7H262.8c-12 0-21.7 9.7-21.7 21.7v290.1c0 12 9.7 21.7 21.7 21.7h103.2V441.7z" fill="#fff"/></svg>
+                                    </div>
+                                        <div class="w-4 h-4 rounded-full border border-white flex items-center justify-center overflow-hidden shrink-0">
+                                        <svg viewBox="0 0 1024 1024" class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><circle cx="512" cy="512" r="512" fill="#f33e58"/><path d="M728.3 361.6c-48.4-48.4-126.9-48.4-175.3 0L512 402.6l-41-41c-48.4-48.4-126.9-48.4-175.3 0-48.4 48.4-48.4 126.9 0 175.3L512 753.2l216.3-216.3c48.4-48.4 48.4-126.9 0-175.3z" fill="#fff"/></svg>
+                                    </div>
+                                    </div>
+                                    <span class="ml-1">27</span>
+                                </div>
+                                <div>
+                                    <span class="hover:underline cursor-pointer">5 comentarios</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="flex items-center justify-between pt-1">
+                                <button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-gray-600 hover:bg-gray-50 rounded-lg font-semibold text-[11px] transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.514"></path></svg>
+                                    Me gusta
+                                </button>
+                                <button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-gray-600 hover:bg-gray-50 rounded-lg font-semibold text-[11px] transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                    Comentar
+                                </button>
+                                <button class="flex-1 flex items-center justify-center gap-1.5 py-1.5 text-gray-600 hover:bg-gray-50 rounded-lg font-semibold text-[11px] transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                                    Compartir
+                                </button>
+                            </div>
+                        </div>
+                        
+                    
                 </div>
                         </div>
 
                         <!-- Tab 2: Description -->
                         <div id="tab-desc" class="hidden animate-fade-in">
                             <div class="max-w-4xl mx-auto py-4">
-                                <h3 class="text-xl font-bold text-gray-900 mb-4">{{ product_name }}</h3>
+                                <h3 class="text-xl font-bold text-gray-900 mb-4">{{ short_name }}</h3>
                                 <p class="text-[15px] text-gray-700 leading-relaxed mb-6 whitespace-pre-line">
-                                    {{ solution_desc | default('Descubre la diferencia con nuestro producto diseñado para brindarte los mejores resultados y acompañarte en tu rutina diaria con la máxima calidad y efectividad.') }}
+                                    Un limpiador natural que actúa como una "escoba", eliminando bacterias malas mientras desinflama y calma las paredes de tu intestino.
                                 </p>
                             </div>
                         </div>
@@ -446,14 +597,14 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                         <div class="text-left mb-6">
                             <h3 class="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3 leading-snug">¿Cómo se usa?</h3>
                             <p class="text-[14px] text-gray-600 leading-relaxed mb-5 font-medium">
-                                {{ how_to_use | default('Añade una porción diaria a tu bebida favorita (fría o caliente), revuelve bien y disfruta de sus beneficios. Su formato sin sabor lo hace perfecto para cualquier momento del día.') }}
+                                Toma 1 o 2 cápsulas al día junto con tu comida principal. <b>Nunca las tomes con el estómago vacío.</b> Úsalo por ciclos (ej. 3 semanas seguidas y 2 de descanso) para mantener tu flora intestinal protegida.
                             </p>
                         </div>
                     </div>
                     <!-- GIF Right -->
                     <div class="flex justify-center md:justify-end w-full pl-0 md:pl-8">
                         <div class="w-full max-w-[380px] rounded-3xl overflow-hidden shadow-lg border border-gray-100 bg-white flex justify-center">
-                            <img src="assets/Snaptik.app_7373690650144853290-ezgif.com-video-to-gif-converter.webp" alt="Cómo Usar el Producto" class="w-full aspect-square object-cover" onerror="this.src='https://placehold.co/800x800/f8fafc/64748b?text=GIF+COMO+USAR'">
+                            <img src="assets/gifs/giforegano.gif" alt="Cómo Usar el Producto" class="w-full aspect-square object-cover" onerror="this.src='https://placehold.co/800x800/f8fafc/64748b?text=GIF+COMO+USAR'">
                         </div>
                     </div>
                 </div>
@@ -461,48 +612,26 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
         </section>
 
         <!-- NUEVA SECCIÓN DE VIDEOS TIKTOK -->
-        <section class="py-12 md:py-16 bg-white">
-            <div class="container mx-auto px-6 text-center max-w-5xl">
+        <section class="bg-gray-50 py-12 md:py-20 border-t border-gray-100 overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
                 <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-8 tracking-tighter">Viral en TikTok</h3>
-                
-                <div class="flex overflow-x-auto justify-start lg:justify-center gap-6 snap-x snap-mandatory pb-6 px-4" style="-ms-overflow-style: none; scrollbar-width: none;">
-                    {% if tiktok_videos %}
-                        {% for video_id in tiktok_videos %}
-                        <div class="snap-center shrink-0 w-[325px] relative">
-                        <!-- Escudo Total Anti-Fuga -->
-                        <div class="absolute inset-0 w-full h-full z-50 bg-transparent cursor-default"></div>
-                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@user/video/{{ video_id }}" data-video-id="{{ video_id }}" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-                                <section></section>
-                            </blockquote>
+                <div class="relative w-full">
+                    <div class="flex overflow-x-auto gap-4 md:gap-6 snap-x snap-mandatory pb-8 pt-4 px-2 -mx-2 hide-scrollbar">
+                        <!-- Video 1 -->
+                        <div class="flex-none w-[280px] md:w-[325px] snap-center shrink-0">
+                            <video src="assets/videos tik tok/WhatsApp Video 2026-07-02 at 19.40.09.mp4" autoplay loop muted playsinline class="w-full rounded-2xl shadow-xl border border-gray-200" style="aspect-ratio: 9/16; object-fit: cover;"></video>
                         </div>
-                        {% endfor %}
-                    {% else %}
-                        <!-- Fallback TikToks -->
-                        <div class="snap-center shrink-0 w-[325px] relative">
-                        <!-- Escudo Total Anti-Fuga -->
-                        <div class="absolute inset-0 w-full h-full z-50 bg-transparent cursor-default"></div>
-                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@diffuserpro2/video/7263192751708130602" data-video-id="7263192751708130602" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-                                <section></section>
-                            </blockquote>
+                        <!-- Video 2 -->
+                        <div class="flex-none w-[280px] md:w-[325px] snap-center shrink-0">
+                            <video src="assets/videos tik tok/WhatsApp Video 2026-07-02 at 19.40.10 (1).mp4" autoplay loop muted playsinline class="w-full rounded-2xl shadow-xl border border-gray-200" style="aspect-ratio: 9/16; object-fit: cover;"></video>
                         </div>
-                        <div class="snap-center shrink-0 w-[325px] relative">
-                        <!-- Escudo Total Anti-Fuga -->
-                        <div class="absolute inset-0 w-full h-full z-50 bg-transparent cursor-default"></div>
-                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@eskahome/video/7137111577060199686" data-video-id="7137111577060199686" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-                                <section></section>
-                            </blockquote>
+                        <!-- Video 3 -->
+                        <div class="flex-none w-[280px] md:w-[325px] snap-center shrink-0">
+                            <video src="assets/videos tik tok/WhatsApp Video 2026-07-02 at 19.40.10.mp4" autoplay loop muted playsinline class="w-full rounded-2xl shadow-xl border border-gray-200" style="aspect-ratio: 9/16; object-fit: cover;"></video>
                         </div>
-                        <div class="snap-center shrink-0 w-[325px] relative">
-                        <!-- Escudo Total Anti-Fuga -->
-                        <div class="absolute inset-0 w-full h-full z-50 bg-transparent cursor-default"></div>
-                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@vaperwave/video/7434815922885512480" data-video-id="7434815922885512480" style="max-width: 100%; min-width: 325px; margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-                                <section></section>
-                            </blockquote>
-                        </div>
-                    {% endif %}
+                    </div>
                 </div>
             </div>
-            
         </section>
 
         
@@ -516,25 +645,75 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                 <p class="text-lg text-gray-600">Resolvemos tus dudas para que compres con total confianza.</p>
             </div>
             <div class="space-y-4">
-                {% for faq in faqs %}
-                <details class="group {% if not loop.last %}border-b border-gray-200{% endif %} pb-4">
+                
+                <details class="group border-b border-gray-200 pb-4">
                     <summary class="flex justify-between items-center cursor-pointer list-none">
-                        <span class="font-medium text-gray-900">{{ faq.question }}</span>
+                        <span class="font-medium text-gray-900">¿Qué significa que sea pago contra entrega?</span>
                         <span class="transition-transform transform group-open:rotate-180">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </span>
                     </summary>
-                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">{{ faq.answer }}</p>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">Significa que realizas tu pedido ahora sin necesidad de ingresar datos de pago. Pagas el total de tu compra, en efectivo o con transferencia, directamente al repartidor cuando recibes el producto en tu domicilio.</p>
                 </details>
-                {% endfor %}
+                
+                <details class="group border-b border-gray-200 pb-4">
+                    <summary class="flex justify-between items-center cursor-pointer list-none">
+                        <span class="font-medium text-gray-900">¿Para qué sirve exactamente?</span>
+                        <span class="transition-transform transform group-open:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">El aceite de orégano es conocido por sus fuertes propiedades antioxidantes, antibacterianas y antivirales. Apoya el sistema inmune, mejora la digestión y ayuda a combatir bacterias.</p>
+                </details>
+                
+                <details class="group border-b border-gray-200 pb-4">
+                    <summary class="flex justify-between items-center cursor-pointer list-none">
+                        <span class="font-medium text-gray-900">¿Tienen el sabor fuerte del orégano?</span>
+                        <span class="transition-transform transform group-open:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">No, la gran ventaja de estas cápsulas es que son fáciles de tragar y evitan el sabor picante o fuerte que tiene el aceite de orégano líquido tradicional.</p>
+                </details>
+                
+                <details class="group border-b border-gray-200 pb-4">
+                    <summary class="flex justify-between items-center cursor-pointer list-none">
+                        <span class="font-medium text-gray-900">¿Cómo y cuándo debo tomar las cápsulas?</span>
+                        <span class="transition-transform transform group-open:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">Lo habitual es tomar 1 cápsula al día junto con tu comida más contundente (ej. el almuerzo). <br><br><b>Regla de oro:</b> Nunca las tomes con el estómago vacío. Al ser un extracto muy potente, acompañarlo con comida y agua evita cualquier sensación de acidez o reflujo.</p>
+                </details>
+                
+                <details class="group border-b border-gray-200 pb-4">
+                    <summary class="flex justify-between items-center cursor-pointer list-none">
+                        <span class="font-medium text-gray-900">¿Por cuánto tiempo seguido debo tomarlo?</span>
+                        <span class="transition-transform transform group-open:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">Debido a su gran potencia antibacteriana, se usa por ciclos para proteger tu flora intestinal:<br><br>• <b>Limpieza digestiva (hinchazón):</b> 2 a 3 semanas seguidas.<br>• <b>Refuerzo Inmune (resfríos):</b> 7 a 10 días.<br><br><b>El periodo de descanso:</b> Tras tomarlo por 3 semanas, descansa 2 semanas.</p>
+                </details>
+                
+                <details class="group  pb-4">
+                    <summary class="flex justify-between items-center cursor-pointer list-none">
+                        <span class="font-medium text-gray-900">¿Tiene contraindicaciones?</span>
+                        <span class="transition-transform transform group-open:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm leading-relaxed">Al ser un limpiador natural muy potente, no se recomienda para mujeres embarazadas o en periodo de lactancia. Recuerda siempre respetar los periodos de descanso indicados y no tomarlo de forma continua por meses. Ante cualquier duda, consulta a tu médico.</p>
+                </details>
+                
             </div>
         </section>
 
         <!-- 10. Final CTA Section -->
         <section class="container mx-auto px-6 py-12 md:py-16">
             <div class="bg-gray-50 rounded-3xl p-8 md:p-16 text-center flex flex-col items-center">
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-gray-900 mb-4">{{ cta_title }}</h2>
-                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">{{ cta_desc }}</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-gray-900 mb-4">Protege tu organismo de forma natural hoy mismo</h2>
+                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">Dale a tu cuerpo el escudo protector que necesita. Mantén tus defensas altas y tu digestión en equilibrio con el poder puro del orégano.</p>
                 <button onclick="document.getElementById('checkoutModal').classList.remove('hidden')" class="w-full max-w-xs bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3 px-4 rounded-xl text-base transition-transform transform hover:scale-105 active:scale-95 shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2">
                     COMPRAR CON PAGO EN CASA
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -678,7 +857,7 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
         }
 
         let selectedUnits = '1 Unidad';
-        let selectedPrice = '{{ offer_price }}';
+        let selectedPrice = '{{ promo_price }}';
 
         function selectPromo(units, price) {
             selectedUnits = units === 1 ? '1 Unidad' : '2 Unidades';
@@ -767,7 +946,7 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                 direccion: document.getElementById('codAddress').value + ' - ' + document.getElementById('codApt').value,
                 region: document.getElementById('region').options[document.getElementById('region').selectedIndex].text,
                 comuna: document.getElementById('comuna').value,
-                producto: "Humidificador Llama 3D",
+                producto: "{{ short_name }}",
                 total: selectedPrice,
                 unidades: selectedUnits
             };
@@ -779,6 +958,9 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
                 body: JSON.stringify(orderData)
             })
             .then(response => {
+                if (!response.ok) {
+                    throw new Error('El webhook de Make.com devolvió un error: ' + response.status);
+                }
                 // Acciones de éxito
                 document.getElementById('checkoutModal').classList.add('hidden');
                 document.getElementById('codForm').reset();
@@ -821,11 +1003,11 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
             </div>
           <div class="bg-gray-50 p-3 rounded-xl border border-gray-100 flex items-center gap-3 mb-5">
             <div class="flex-1">
-                <span class="block text-xs font-bold text-gray-900 leading-tight">{{ product_name }}</span>
+                <span class="block text-xs font-bold text-gray-900 leading-tight">{{ short_name }}</span>
                 <span id="modal-units" class="block text-[10px] text-gray-500 mt-0.5">1 Unidad</span>
             </div>
             <div class="text-right">
-                <span id="modal-price" class="block text-base font-bold text-emerald-600">{{ offer_price }}</span>
+                <span id="modal-price" class="block text-base font-bold text-emerald-600">{{ promo_price }}</span>
                 <span class="block text-[9px] text-indigo-600 font-bold uppercase mt-0.5">ENVÍO GRATIS</span>
             </div>
           </div>
@@ -929,7 +1111,7 @@ src="https://www.facebook.com/tr?id=1004224458768338&ev=PageView&noscript=1"
 
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/56979460119?text=%C2%A1Hola%20MUNDO%20AURA%21%20tengo%20dudas%20sobre...%20{{ product_name }}" target="_blank" class="fixed bottom-6 right-6 z-50 transition-transform hover:scale-110 drop-shadow-2xl" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/56979460119?text=%C2%A1Hola%20MUNDO%20AURA%21%20tengo%20dudas%20sobre...%20{{ short_name }}" target="_blank" class="fixed bottom-6 right-6 z-50 transition-transform hover:scale-110 drop-shadow-2xl" aria-label="Chat on WhatsApp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-14 h-14 md:w-16 md:h-16">
     </a>
     <script async src="https://www.tiktok.com/embed.js"></script>
