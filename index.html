@@ -327,9 +327,9 @@ Apple/Linear Similarity: 9/10
                             <!-- Vertical Promos (Screenshot 1) -->
                             <div class="space-y-3 mb-4" id="promo-selector-vertical">
                                 <!-- Promo 1 -->
-                                <label id="label-promo-1" 
+                                <label onclick="selectPromo(1, 23990); event.preventDefault();" id="label-promo-1" 
                                     class="relative flex items-center justify-between border border-gray-200 rounded-2xl p-3.5 cursor-pointer bg-white transition-all shadow-sm select-none hover:border-emerald-300">
-                                    <input type="radio" name="promo" value="1" class="hidden" onclick="selectPromo(1, 23990)">
+                                    <input type="radio" name="promo" value="1" class="hidden">
                                     <div class="flex items-center gap-3">
                                         <img src="assets/fotos producto/1.jpg" alt="1 Unidad" class="w-12 h-12 rounded-xl object-contain bg-gray-50 border border-gray-100 p-0.5">
                                         <div class="text-left">
@@ -344,9 +344,9 @@ Apple/Linear Similarity: 9/10
                                 </label>
 
                                 <!-- Promo 2 (Default Selected) -->
-                                <label id="label-promo-2" 
+                                <label onclick="selectPromo(2, 32990); event.preventDefault();" id="label-promo-2" 
                                     class="relative flex items-center justify-between border-2 border-emerald-500 rounded-2xl p-3.5 cursor-pointer bg-emerald-50/40 transition-all shadow-sm select-none hover:border-emerald-500">
-                                    <input type="radio" name="promo" value="2" class="hidden" checked onclick="selectPromo(2, 32990)">
+                                    <input type="radio" name="promo" value="2" class="hidden" checked>
                                     <div class="flex items-center gap-3">
                                         <img src="assets/fotos producto/2.jpg" alt="2 Unidades" class="w-12 h-12 rounded-xl object-contain bg-gray-50 border border-gray-100 p-0.5">
                                         <div class="text-left">
@@ -399,94 +399,39 @@ Apple/Linear Similarity: 9/10
                             <form id="codForm" onsubmit="submitCODOrder(event)" class="space-y-3.5 mt-6 text-left">
                                 <!-- Nombre -->
                                 <div>
-                                    <label class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Nombre y Apellido *</label>
-                                    <div class="flex border border-gray-200 rounded-lg focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500 overflow-hidden bg-white shadow-sm transition-shadow">
-                                        <span class="bg-gray-50 border-r border-gray-200 text-gray-400 w-10 flex items-center justify-center shrink-0">
-                                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
-                                        </span>
-                                        <input type="text" id="codName" required
-                                            class="flex-1 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none"
-                                            placeholder="Nombre Completo"
-                                            oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')">
-                                    </div>
+                                    <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre</label>
+                                    <input type="text" id="codName" required 
+                                        class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors shadow-sm"
+                                        placeholder="Juan Pérez"
+                                        oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')">
                                 </div>
 
                                 <!-- WhatsApp -->
                                 <div>
-                                    <label class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">WhatsApp *</label>
-                                    <div class="flex border border-gray-200 rounded-lg focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500 overflow-hidden bg-white shadow-sm transition-shadow">
-                                        <span class="bg-gray-50 border-r border-gray-200 text-gray-400 w-10 flex items-center justify-center shrink-0">
-                                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                            </svg>
-                                        </span>
-                                        <input type="tel" id="codPhone" required
-                                            class="flex-1 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none"
-                                            placeholder="No incluir el código +56" value="+56 "
-                                            oninput="let v = this.value; if(!v.startsWith('+56 ')) { this.value = '+56 '; return; } let num = v.substring(4).replace(/[^0-9]/g, ''); this.value = '+56 ' + num;">
-                                    </div>
+                                    <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">Teléfono (WhatsApp)</label>
+                                    <input type="tel" id="codPhone" required 
+                                        class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors shadow-sm"
+                                        placeholder="+56" value="+56 "
+                                        oninput="let v = this.value; if(!v.startsWith('+56 ')) { this.value = '+56 '; return; } let num = v.substring(4).replace(/[^0-9]/g, ''); this.value = '+56 ' + num;">
                                     <p id="phoneError" class="text-red-500 text-[10px] mt-1 hidden">Ingresa un número válido y real.</p>
-                                </div>
-
-                                
-
-                                <!-- Región -->
-                                <div>
-                                    <label for="region" class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Región *</label>
-                                    <select id="region" name="region" required
-                                        class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors appearance-none cursor-pointer">
-                                        <option value="">Selecciona tu Región</option>
-                                        <option value="arica">Región de Arica y Parinacota</option>
-                                        <option value="tarapaca">Región de Tarapacá</option>
-                                        <option value="antofagasta">Región de Antofagasta</option>
-                                        <option value="coquimbo">Región de Coquimbo</option>
-                                        <option value="valparaiso">Región de Valparaíso</option>
-                                        <option value="metropolitana">Región Metropolitana</option>
-                                        <option value="ohiggins">Región de O'Higgins</option>
-                                        <option value="maule">Región del Maule</option>
-                                        <option value="nuble">Región de Ñuble</option>
-                                        <option value="biobio">Región del Biobío</option>
-                                        <option value="araucania">Región de la Araucanía</option>
-                                        <option value="losrios">Región de los Ríos</option>
-                                        <option value="loslagos">Región de los Lagos</option>
-                                        <option value="aysen">Región de Aysén del G. Carlos Ibáñez del Campo</option>
-                                        <option value="magallanes">Región de Magallanes y de la Antártica Chilena</option>
-                                    </select>
-                                </div>
-
-                                <!-- RM warning notice -->
-                                <p class="text-[9.5px] text-red-500 font-bold leading-relaxed bg-red-50/50 p-2.5 rounded-lg border border-red-100/50">
-                                    Si usted vive "Fuera de Región Metropolitana" busque la opción en el apartado de "Comuna" o contáctenos al link de WhatsApp que se encuentra en la parte inferior para ayudarle con su pedido.
-                                </p>
-
-                                <!-- Comuna -->
-                                <div>
-                                    <label for="comuna" class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Comuna *</label>
-                                    <select id="comuna" name="comuna" required disabled
-                                        class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors appearance-none cursor-pointer disabled:opacity-50 disabled:bg-gray-50 disabled:cursor-not-allowed">
-                                        <option value="">Selecciona tu Comuna</option>
-                                    </select>
                                 </div>
 
                                 <!-- Dirección -->
                                 <div>
-                                    <label class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Dirección de Entrega *</label>
-                                    <div class="flex border border-gray-200 rounded-lg focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500 overflow-hidden bg-white shadow-sm transition-shadow">
-                                        <span class="bg-gray-50 border-r border-gray-200 text-gray-400 w-10 flex items-center justify-center shrink-0">
-                                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            </svg>
-                                        </span>
-                                        <input type="text" id="codAddress" required
-                                            class="flex-1 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none"
-                                            placeholder="Calle y Número de Domicilio">
-                                    </div>
+                                    <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dirección (Calle, Número, Depto)</label>
+                                    <input type="text" id="codAddress" required 
+                                        class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors shadow-sm"
+                                        placeholder="Ej: Av. Vitacura 1234, Depto 501">
                                 </div>
 
-                                <!-- Submit Button (Screenshot 2) -->
+                                <!-- Comuna / Ciudad -->
+                                <div>
+                                    <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">Comuna / Ciudad *</label>
+                                    <input type="text" id="comuna" required 
+                                        class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors shadow-sm"
+                                        placeholder="Escribe tu comuna (ej: Providencia...)">
+                                </div>
+                                
                                 <button type="submit"
                                     class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold py-3.5 px-4 rounded-xl text-base transition-transform transform active:scale-95 shadow-xl shadow-emerald-700/20 flex flex-col items-center justify-center gap-0.5 mt-4 animate-attention">
                                     <div class="flex items-center justify-center gap-2">
@@ -1562,7 +1507,7 @@ Apple/Linear Similarity: 9/10
                 correo: document.getElementById('codEmail').value,
                 telefono: telefonoLimpio,
                 direccion: document.getElementById('codAddress').value,
-                region: document.getElementById('region').options[document.getElementById('region').selectedIndex].text,
+                region: "-",
                 comuna: document.getElementById('comuna').value,
                 producto: "Aceite De Orégano con Aceite de Semilla Negra 6000 Mg",
                 total: selectedPrice,
