@@ -408,9 +408,9 @@ MUNDO <img src="assets/logo.png" alt="Logo" class="h-12 md:h-16 w-auto object-co
 
                             <!-- Infografías (Vertical Stack) -->
                             <div class="mt-6 space-y-4">
-                                <img src="assets/infografias/infografia1.png" alt="Infografía 1" class="w-full max-w-sm rounded-2xl shadow-md border border-gray-100 mx-auto object-contain">
-                                <img src="assets/infografias/infografia 2.png" alt="Infografía 2" class="w-full max-w-sm rounded-2xl shadow-md border border-gray-100 mx-auto object-contain">
-                                <img src="assets/infografias/infografia3.png" alt="Infografía 3" class="w-full max-w-sm rounded-2xl shadow-md border border-gray-100 mx-auto object-contain">
+                                <img src="assets/infografias/infografia1.png" alt="Infografía 1" class="w-full max-w-sm mx-auto object-contain mix-blend-multiply">
+                                <img src="assets/infografias/infografia 2.png" alt="Infografía 2" class="w-full max-w-sm mx-auto object-contain mix-blend-multiply">
+                                <img src="assets/infografias/infografia3.png" alt="Infografía 3" class="w-full max-w-sm mx-auto object-contain mix-blend-multiply">
                             </div>
 
 
@@ -1635,40 +1635,7 @@ MUNDO <img src="assets/logo.png" alt="Logo" class="h-12 md:h-16 w-auto object-co
 </script>
 <script async src="https://www.tiktok.com/embed.js"></script>
 
-    <!-- Script de proteccion contra copia y descarga de imagenes -->
-    <script>
-        // Bloquear click derecho
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-
-        // Bloquear atajos de teclado para copiar o ver codigo fuente
-        document.addEventListener('keydown', function(e) {
-            // Ctrl+C o Cmd+C (Copiar)
-            if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
-                e.preventDefault();
-            }
-            // Ctrl+U (Ver codigo fuente)
-            if ((e.ctrlKey || e.metaKey) && e.key === 'u') {
-                e.preventDefault();
-            }
-            // F12 (Herramientas de Desarrollador)
-            if (e.key === 'F12') {
-                e.preventDefault();
-            }
-            // Ctrl+Shift+I o Cmd+Opt+I (Inspeccionar)
-            if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'i') {
-                e.preventDefault();
-            }
-        });
-
-        // Bloquear arrastrar y soltar imagenes (evita descargarlas arrastrando al escritorio o barra de busqueda)
-        document.addEventListener('dragstart', function(e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-            }
-        });
-    </script>
+    
 </body>
 
 </html>
