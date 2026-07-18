@@ -114,6 +114,14 @@ Apple/Linear Similarity: 9/10
             -ms-user-select: text;
             user-select: text;
         }
+    
+        @keyframes gentle-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 15px -3px rgba(4, 120, 87, 0.2), 0 4px 6px -2px rgba(4, 120, 87, 0.1); }
+            50% { transform: scale(1.025); box-shadow: 0 20px 25px -5px rgba(4, 120, 87, 0.4), 0 10px 10px -5px rgba(4, 120, 87, 0.2); }
+        }
+        .animate-attention {
+            animation: gentle-pulse 2s infinite ease-in-out;
+        }
     </style>
     <!-- Confetti Library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -325,72 +333,227 @@ Apple/Linear Similarity: 9/10
 
                         </ul>
 
-                        <div class="mb-5">
-                            <span class="block text-[10px] font-bold text-gray-500 tracking-wider mb-2">SELECCIONA TU
-                                PROMOCIÓN (ENVÍO GRATIS):</span>
-                            <div class="grid grid-cols-2 gap-2" id="promo-selector">
-                                <label onclick="selectPromo(1, '$23.990')" id="label-promo-1"
-                                    class="relative border-2 border-indigo-600 bg-indigo-50/30 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors">
-                                    <input type="radio" name="promo" value="1" class="hidden" checked>
-                                    <span class="block text-xs font-bold text-gray-900 mb-0.5">Llevar 1 Unidad</span>
-                                    <span class="block text-[10px] text-gray-500 mb-1">Precio Unitario</span>
-                                    <span class="block font-extrabold text-emerald-600 text-base">$23.990</span>
+                        <div id="checkout-section" class="border-t border-gray-100 pt-6 mt-6">
+                            <h3 class="text-center text-lg md:text-xl font-black text-red-600 flex items-center justify-center gap-1.5 mb-1 animate-pulse">
+                                ¡Ordena y Paga al Recibir! 📦
+                            </h3>
+                            <p class="text-center text-xs text-gray-600 mb-5 leading-normal max-w-xs mx-auto font-bold">
+                                Nuestros despachadores se comunicarán contigo a la hora de realizar la entrega 🚚
+                            </p>
+
+                            <!-- Vertical Promos (Screenshot 1) -->
+                            <div class="space-y-3 mb-4" id="promo-selector-vertical">
+                                <!-- Promo 1 -->
+                                <label id="label-promo-1" 
+                                    class="relative flex items-center justify-between border border-gray-200 rounded-2xl p-3.5 cursor-pointer bg-white transition-all shadow-sm select-none hover:border-emerald-300">
+                                    <input type="radio" name="promo" value="1" class="hidden" onclick="selectPromo(1, 23990)">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/fotos producto/1.jpg" alt="1 Unidad" class="w-12 h-12 rounded-xl object-contain bg-gray-50 border border-gray-100 p-0.5">
+                                        <div class="text-left">
+                                            <span class="block text-xs font-bold text-gray-900 leading-tight">Lleva 1 Unidad</span>
+                                            <span class="block text-[11px] font-semibold text-gray-500 mb-1">"OFERTA EXCLUSIVA"</span>
+                                            <span class="inline-block bg-red-600 text-white font-extrabold text-[9px] px-2 py-0.5 rounded-full tracking-wider uppercase">50% DE DESCUENTO</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="block font-black text-gray-900 text-lg">$23.990</span>
+                                    </div>
                                 </label>
-                                <label onclick="selectPromo(2, '$32.990')" id="label-promo-2"
-                                    class="relative border-2 border-gray-100 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors hover:border-indigo-400">
-                                    <input type="radio" name="promo" value="2" class="hidden">
-                                    <span class="block text-xs font-bold text-gray-600 mb-0.5">Llevar 2 Unidades</span>
-                                    <span class="block text-[10px] text-indigo-600 font-bold mb-1">Segunda al 50%</span>
-                                    <span class="block font-extrabold text-gray-900 text-base">$32.990</span>
+
+                                <!-- Promo 2 (Default Selected) -->
+                                <label id="label-promo-2" 
+                                    class="relative flex items-center justify-between border-2 border-emerald-500 rounded-2xl p-3.5 cursor-pointer bg-emerald-50/40 transition-all shadow-sm select-none hover:border-emerald-500">
+                                    <input type="radio" name="promo" value="2" class="hidden" checked onclick="selectPromo(2, 32990)">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/fotos producto/2.jpg" alt="2 Unidades" class="w-12 h-12 rounded-xl object-contain bg-gray-50 border border-gray-100 p-0.5">
+                                        <div class="text-left">
+                                            <span class="block text-xs font-bold text-gray-900 leading-tight">Lleva 2 Unidades</span>
+                                            <span class="block text-[11px] font-semibold text-gray-500 mb-1">"MÁS VENDIDO"</span>
+                                            <span class="inline-block bg-red-600 text-white font-extrabold text-[9px] px-2 py-0.5 rounded-full tracking-wider uppercase">75% DE DESCUENTO</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="block text-xs text-gray-400 line-through font-bold leading-none mb-0.5">$47.980</span>
+                                        <span class="block font-black text-emerald-700 text-lg">$32.990</span>
+                                    </div>
                                 </label>
                             </div>
+
+                            <!-- Order Bump (Envío Express) (Screenshot 1) -->
+                            <div id="express-bump-card" class="bg-sky-50 text-sky-900 border border-sky-200 rounded-2xl p-3.5 mb-4 flex gap-3 items-center select-none cursor-pointer" onclick="toggleExpressShipping()">
+                                <input type="checkbox" id="express-bump" class="w-4 h-4 text-sky-600 rounded border-gray-300 focus:ring-sky-500 cursor-pointer" onclick="event.stopPropagation(); updatePrices();">
+                                <p class="text-xs font-medium leading-tight text-left">
+                                    Agrega <strong class="font-extrabold text-sky-950">Envío Express + Garantía Extendida</strong> por tan solo <strong class="font-black text-sky-700">$1.990</strong>
+                                </p>
+                            </div>
+
+                            <!-- Pricing Summary Box (Screenshot 1) -->
+                            <div class="bg-gray-50 rounded-2xl p-4 mb-4 border border-gray-200/50 text-xs">
+                                <div class="flex justify-between items-center mb-2 text-gray-600">
+                                    <span>Subtotal</span>
+                                    <span id="summary-subtotal" class="font-semibold">$47.980</span>
+                                </div>
+                                <div class="flex justify-between items-center mb-2 text-gray-600">
+                                    <span>Envío</span>
+                                    <span class="text-emerald-600 font-bold uppercase tracking-wider text-[10px]">Gratis</span>
+                                </div>
+                                <div class="flex justify-between items-center mb-2 text-gray-600">
+                                    <span>Descuentos 🏷️</span>
+                                    <span id="summary-discount" class="text-red-500 font-bold">- $14.990</span>
+                                </div>
+                                <div id="summary-express-row" class="flex justify-between items-center mb-2 text-gray-600 hidden">
+                                    <span>Envío Express 🚀</span>
+                                    <span class="font-semibold">$1.990</span>
+                                </div>
+                                <hr class="border-gray-200 my-2">
+                                <div class="flex justify-between items-center text-sm text-gray-900 font-black">
+                                    <span>Total</span>
+                                    <span id="summary-total" class="text-base text-gray-900">$32.990</span>
+                                </div>
+                            </div>
+
+                            <!-- Embedded Form (Screenshot 2) -->
+                            <form id="codForm" onsubmit="submitCODOrder(event)" class="space-y-3.5 mt-6 text-left">
+                                <!-- Nombre -->
+                                <div>
+                                    <label class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Nombre y Apellido *</label>
+                                    <div class="flex border border-gray-200 rounded-lg focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500 overflow-hidden bg-white shadow-sm transition-shadow">
+                                        <span class="bg-gray-50 border-r border-gray-200 text-gray-400 w-10 flex items-center justify-center shrink-0">
+                                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </span>
+                                        <input type="text" id="codName" required
+                                            class="flex-1 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none"
+                                            placeholder="Nombre Completo"
+                                            oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')">
+                                    </div>
+                                </div>
+
+                                <!-- WhatsApp -->
+                                <div>
+                                    <label class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">WhatsApp *</label>
+                                    <div class="flex border border-gray-200 rounded-lg focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500 overflow-hidden bg-white shadow-sm transition-shadow">
+                                        <span class="bg-gray-50 border-r border-gray-200 text-gray-400 w-10 flex items-center justify-center shrink-0">
+                                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                            </svg>
+                                        </span>
+                                        <input type="tel" id="codPhone" required
+                                            class="flex-1 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none"
+                                            placeholder="No incluir el código +56" value="+56 "
+                                            oninput="let v = this.value; if(!v.startsWith('+56 ')) { this.value = '+56 '; return; } let num = v.substring(4).replace(/[^0-9]/g, ''); this.value = '+56 ' + num;">
+                                    </div>
+                                    <p id="phoneError" class="text-red-500 text-[10px] mt-1 hidden">Ingresa un número válido y real.</p>
+                                </div>
+
+                                
+
+                                <!-- Región -->
+                                <div>
+                                    <label for="region" class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Región *</label>
+                                    <select id="region" name="region" required
+                                        class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors appearance-none cursor-pointer">
+                                        <option value="">Selecciona tu Región</option>
+                                        <option value="arica">Región de Arica y Parinacota</option>
+                                        <option value="tarapaca">Región de Tarapacá</option>
+                                        <option value="antofagasta">Región de Antofagasta</option>
+                                        <option value="coquimbo">Región de Coquimbo</option>
+                                        <option value="valparaiso">Región de Valparaíso</option>
+                                        <option value="metropolitana">Región Metropolitana</option>
+                                        <option value="ohiggins">Región de O'Higgins</option>
+                                        <option value="maule">Región del Maule</option>
+                                        <option value="nuble">Región de Ñuble</option>
+                                        <option value="biobio">Región del Biobío</option>
+                                        <option value="araucania">Región de la Araucanía</option>
+                                        <option value="losrios">Región de los Ríos</option>
+                                        <option value="loslagos">Región de los Lagos</option>
+                                        <option value="aysen">Región de Aysén del G. Carlos Ibáñez del Campo</option>
+                                        <option value="magallanes">Región de Magallanes y de la Antártica Chilena</option>
+                                    </select>
+                                </div>
+
+                                <!-- RM warning notice -->
+                                <p class="text-[9.5px] text-red-500 font-bold leading-relaxed bg-red-50/50 p-2.5 rounded-lg border border-red-100/50">
+                                    Si usted vive "Fuera de Región Metropolitana" busque la opción en el apartado de "Comuna" o contáctenos al link de WhatsApp que se encuentra en la parte inferior para ayudarle con su pedido.
+                                </p>
+
+                                <!-- Comuna -->
+                                <div>
+                                    <label for="comuna" class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Comuna *</label>
+                                    <select id="comuna" name="comuna" required disabled
+                                        class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors appearance-none cursor-pointer disabled:opacity-50 disabled:bg-gray-50 disabled:cursor-not-allowed">
+                                        <option value="">Selecciona tu Comuna</option>
+                                    </select>
+                                </div>
+
+                                <!-- Dirección -->
+                                <div>
+                                    <label class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Dirección de Entrega *</label>
+                                    <div class="flex border border-gray-200 rounded-lg focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500 overflow-hidden bg-white shadow-sm transition-shadow">
+                                        <span class="bg-gray-50 border-r border-gray-200 text-gray-400 w-10 flex items-center justify-center shrink-0">
+                                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                        </span>
+                                        <input type="text" id="codAddress" required
+                                            class="flex-1 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none"
+                                            placeholder="Calle y Número de Domicilio">
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button (Screenshot 2) -->
+                                <button type="submit"
+                                    class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold py-3.5 px-4 rounded-xl text-base transition-transform transform active:scale-95 shadow-xl shadow-emerald-700/20 flex flex-col items-center justify-center gap-0.5 mt-4 animate-attention">
+                                    <div class="flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                        <span>COMPRA AHORA - <span id="btn-price-display">$32.990</span></span>
+                                    </div>
+                                    <span class="text-[10px] opacity-90 font-medium uppercase tracking-wider">Paga al Recibir</span>
+                                </button>
+                            </form>
+
+                            <!-- Paga Anticipado Black Box (Screenshot 3) -->
+                            <div class="bg-black text-white p-4 rounded-2xl mt-4 text-center select-none shadow-md">
+                                <div class="flex items-center justify-center gap-3 mb-1">
+                                    <svg class="w-5 h-5 text-white shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                    </svg>
+                                    <span class="text-[13px] font-black tracking-wide">PAGA ANTICIPADO Y AHORRA 10% = <span id="prepay-price-display">$29.691</span></span>
+                                </div>
+                                <p class="text-[9.5px] text-gray-300 font-bold">+680 Clientes Aprovechan esta Oferta</p>
+                            </div>
+
+                            <!-- Trust Badges (Gold Theme) (Screenshot 3) -->
+                            <div class="grid grid-cols-3 gap-2 mt-6">
+                                <div class="flex flex-col items-center text-center p-2">
+                                    <svg class="w-10 h-10 text-amber-500 mb-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="rgba(245, 158, 11, 0.05)"/>
+                                        <path d="M9 11v6m6-6v6M9 9h6M8 6h8a2 2 0 012 2v2H6V8a2 2 0 012-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <span class="text-[9px] font-bold text-gray-700 leading-tight">Envío Gratis</span>
+                                </div>
+                                <div class="flex flex-col items-center text-center p-2">
+                                    <svg class="w-10 h-10 text-amber-500 mb-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" fill="rgba(245, 158, 11, 0.05)" stroke-linejoin="round"/>
+                                        <path d="M9 11l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="text-[9px] font-bold text-gray-700 leading-tight">100% Seguro</span>
+                                </div>
+                                <div class="flex flex-col items-center text-center p-2">
+                                    <svg class="w-10 h-10 text-amber-500 mb-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="rgba(245, 158, 11, 0.05)"/>
+                                        <path d="M8.5 12.5l2 2 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="text-[9px] font-bold text-gray-700 leading-tight">Garantía Calidad</span>
+                                </div>
+                            </div>
+
+
                         </div>
-                        <button onclick="document.getElementById('checkoutModal').classList.remove('hidden')"
-                            class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3 px-4 rounded-xl text-base transition-transform transform hover:scale-[1.02] active:scale-95 shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2 mb-3">
-                            COMPRAR AHORA - PAGO EN CASA
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                stroke-linejoin="round" class="w-4 h-4">
-                                <path d="M5 12h14" />
-                                <path d="m12 5 7 7-7 7" />
-                            </svg>
-                        </button>
-                        <div
-                            class="bg-indigo-50/50 text-indigo-900 text-[10px] font-medium text-center p-2 rounded-lg border border-indigo-100 mb-3">
-                            Envío Gratis asegurado: Recíbelo en <strong class="font-bold">24 a 48 horas en RM</strong> y
-                            de <strong class="font-bold">3 a 5 días en regiones</strong>.
-                        </div>
-                        <div class="flex justify-center items-center gap-3 text-[10px] font-medium text-gray-500">
-                            <span class="flex items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                </svg>
-                                Compra 100% Segura
-                            </span>
-                            <span>•</span>
-                            <span class="flex items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M9 11V6a3 3 0 0 1 6 0v5" />
-                                    <rect width="14" height="10" x="5" y="11" rx="2" ry="2" />
-                                </svg>
-                                Paga Contra Entrega
-                            </span>
-                        </div>
-                        <div
-                            class="text-center text-xs font-bold text-gray-700 mt-3 bg-indigo-50/50 text-indigo-900 border-indigo-100 p-2.5 rounded-lg border shadow-sm shadow-sm flex items-center justify-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="text-yellow-600">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>
-                            Producto 100% Regulado - Con Registro ISP y Resolución SEREMI de Salud
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1092,7 +1255,7 @@ Apple/Linear Similarity: 9/10
                 <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">Dale a tu cuerpo el escudo
                     protector que necesita. Mantén tus defensas altas y tu digestión en equilibrio con el poder puro del
                     orégano.</p>
-                <button onclick="document.getElementById('checkoutModal').classList.remove('hidden')"
+                <button onclick="document.getElementById('checkout-section').scrollIntoView({ behavior: 'smooth' })"
                     class="w-full max-w-xs bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3 px-4 rounded-xl text-base transition-transform transform hover:scale-105 active:scale-95 shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2">
                     COMPRAR CON PAGO EN CASA
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -1291,73 +1454,110 @@ Apple/Linear Similarity: 9/10
             activeBtn.className = "flex-1 py-3.5 px-4 text-center font-semibold text-[15px] transition-colors rounded-t-2xl bg-[#f9f9f9] text-gray-900 relative";
         }
 
-        let selectedUnits = '1 Unidad';
-        let selectedPrice = '$23.990';
+        let selectedUnits = '2 Unidades';
+        let selectedPrice = '$32.990';
+        let basePrice = 32990;
+        let expressPrice = 1990;
+        let useExpress = false;
 
-        function selectPromo(units, price) {
-            selectedUnits = units === 1 ? '1 Unidad' : '2 Unidades';
-            selectedPrice = price;
-
+        function selectPromo(units, priceNum) {
+            basePrice = priceNum;
             const label1 = document.getElementById('label-promo-1');
             const label2 = document.getElementById('label-promo-2');
-
+            
             if (units === 1) {
-                label1.className = 'relative border-2 border-indigo-600 bg-indigo-50/30 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors';
-                label2.className = 'relative border-2 border-gray-100 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors hover:border-indigo-400';
+                selectedUnits = '1 Unidad';
+                // Set radio checked
+                const radio = document.querySelector('input[name="promo"][value="1"]');
+                if (radio) radio.checked = true;
+                
+                // Update styles
+                if (label1) label1.className = 'relative flex items-center justify-between border-2 border-emerald-500 rounded-2xl p-3.5 cursor-pointer bg-emerald-50/40 transition-all shadow-sm select-none hover:border-emerald-500';
+                if (label2) label2.className = 'relative flex items-center justify-between border border-gray-200 rounded-2xl p-3.5 cursor-pointer bg-white transition-all shadow-sm select-none hover:border-emerald-300';
             } else {
-                label2.className = 'relative border-2 border-indigo-600 bg-indigo-50/30 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors';
-                label1.className = 'relative border-2 border-gray-100 rounded-xl p-2 cursor-pointer flex flex-col items-center justify-center text-center transition-colors hover:border-indigo-400';
+                selectedUnits = '2 Unidades';
+                const radio = document.querySelector('input[name="promo"][value="2"]');
+                if (radio) radio.checked = true;
+                
+                if (label2) label2.className = 'relative flex items-center justify-between border-2 border-emerald-500 rounded-2xl p-3.5 cursor-pointer bg-emerald-50/40 transition-all shadow-sm select-none hover:border-emerald-500';
+                if (label1) label1.className = 'relative flex items-center justify-between border border-gray-200 rounded-2xl p-3.5 cursor-pointer bg-white transition-all shadow-sm select-none hover:border-emerald-300';
             }
-
-            const modalUnits = document.getElementById('modal-units');
-            const modalPrice = document.getElementById('modal-price');
-            if (modalUnits) modalUnits.innerText = selectedUnits;
-            if (modalPrice) modalPrice.innerText = selectedPrice;
+            
+            updatePrices();
         }
 
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', () => {
+            selectPromo(2, 32990);
+        });
 
-        function formatRut(input) {
-            let rut = input.value.replace(/[^0-9kK]/g, '').toUpperCase();
-            if (rut.length > 1) {
-                input.value = rut.slice(0, -1).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "-" + rut.slice(-1);
+        function toggleExpressShipping() {
+            const checkbox = document.getElementById('express-bump');
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked;
+                updatePrices();
+            }
+        }
+
+        function updatePrices() {
+            const checkbox = document.getElementById('express-bump');
+            if (!checkbox) return;
+            useExpress = checkbox.checked;
+            
+            // Adjust card classes
+            const bumpCard = document.getElementById('express-bump-card');
+            if (bumpCard) {
+                if (useExpress) {
+                    bumpCard.className = 'bg-sky-50 text-sky-950 border-2 border-sky-400 rounded-2xl p-3.5 mb-4 flex gap-3 items-center select-none cursor-pointer';
+                    document.getElementById('summary-express-row').classList.remove('hidden');
+                } else {
+                    bumpCard.className = 'bg-sky-50 text-sky-900 border border-sky-200 rounded-2xl p-3.5 mb-4 flex gap-3 items-center select-none cursor-pointer';
+                    document.getElementById('summary-express-row').classList.add('hidden');
+                }
+            }
+            
+            let totalVal = basePrice;
+            if (useExpress) {
+                totalVal += expressPrice;
+            }
+            
+            // Update Summary
+            if (basePrice === 23990) {
+                document.getElementById('summary-subtotal').innerText = '$31.990';
+                document.getElementById('summary-discount').innerText = '- $8.000';
             } else {
-                input.value = rut;
+                document.getElementById('summary-subtotal').innerText = '$47.980';
+                document.getElementById('summary-discount').innerText = '- $14.990';
             }
-        }
+            
+            selectedPrice = '$' + totalVal.toLocaleString('es-CL');
+            document.getElementById('summary-total').innerText = selectedPrice;
+            
+            // Update Button
+            const btnPrice = document.getElementById('btn-price-display');
+            if (btnPrice) {
+                btnPrice.innerText = selectedPrice;
+            }
+            
+            // Update Prepay Trust Box
+            const prepayTotal = Math.round(totalVal * 0.9);
+            const prepaySpan = document.getElementById('prepay-price-display');
+            if (prepaySpan) {
+                prepaySpan.innerText = '$' + prepayTotal.toLocaleString('es-CL');
+            }
 
-        function validarRut(rutCompleto) {
-            let rut = rutCompleto.replace(/[^0-9kK]/g, '').toUpperCase();
-            if (rut.length < 8) return false;
-            let cuerpo = rut.slice(0, -1);
-            let dv = rut.slice(-1);
-            let suma = 0;
-            let multiplo = 2;
-            for (let i = 1; i <= cuerpo.length; i++) {
-                let index = multiplo * cuerpo.charAt(cuerpo.length - i);
-                suma = suma + index;
-                if (multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
-            }
-            let dvEsperado = 11 - (suma % 11);
-            dv = (dv == 'K') ? 10 : dv;
-            dv = (dv == 0) ? 11 : dv;
-            if (dvEsperado == 11) dvEsperado = '0';
-            else if (dvEsperado == 10) dvEsperado = 'K';
-            else dvEsperado = dvEsperado.toString();
-            return dvEsperado === dv.toString();
-        }
+
+
+
+
+        
+
 
         function submitCODOrder(event) {
 
             event.preventDefault();
 
             // Validaciones de teléfono
-
-            const rutInput = document.getElementById('rut').value;
-            if (!validarRut(rutInput)) {
-                document.getElementById('rutError').classList.remove('hidden');
-                return;
-            }
-            document.getElementById('rutError').classList.add('hidden');
 
             const phone = document.getElementById('codPhone').value;
             if (phone.length < 8 || phone.includes('12345678') || phone.includes('00000000') || /^(\d)\1+$/.test(phone.replace(/\D/g, ''))) {
@@ -1374,11 +1574,11 @@ Apple/Linear Similarity: 9/10
             // Recopilar datos (Capturando los valores de los selectores de región y comuna que ya creamos)
             const telefonoLimpio = phone.replace('+', '');
             const orderData = {
-                rut: document.getElementById('rut').value,
+                rut: "-",
                 nombre: document.getElementById('codName').value,
                 correo: document.getElementById('codEmail').value,
                 telefono: telefonoLimpio,
-                direccion: document.getElementById('codAddress').value + ' - ' + document.getElementById('codApt').value,
+                direccion: document.getElementById('codAddress').value,
                 region: document.getElementById('region').options[document.getElementById('region').selectedIndex].text,
                 comuna: document.getElementById('comuna').value,
                 producto: "Aceite De Orégano con Aceite de Semilla Negra 6000 Mg",
@@ -1397,9 +1597,12 @@ Apple/Linear Similarity: 9/10
                         throw new Error('El webhook de Make.com devolvió un error: ' + response.status);
                     }
                     // Acciones de éxito
-                    document.getElementById('checkoutModal').classList.add('hidden');
+                    
                     document.getElementById('codForm').reset();
-                    submitBtn.innerText = 'Confirmar Compra • Pago Contra Entrega';
+                    const bumpCheckbox = document.getElementById('express-bump');
+                    if (bumpCheckbox) bumpCheckbox.checked = false;
+                    selectPromo(2, 32990);
+                    submitBtn.innerText = 'PÍDELO AHORA Y PAGA EN CASA';
                     submitBtn.disabled = false;
 
                     document.getElementById('successModal').classList.remove('hidden');
@@ -1421,161 +1624,11 @@ Apple/Linear Similarity: 9/10
                 .catch(error => {
                     console.error('Error:', error);
                     alert('Hubo un problema procesando tu pedido. Por favor intenta de nuevo.');
-                    submitBtn.innerText = 'Confirmar Compra • Pago Contra Entrega';
+                    submitBtn.innerText = 'PÍDELO AHORA Y PAGA EN CASA';
                     submitBtn.disabled = false;
                 });
         }
     </script>
-
-    <div id="checkoutModal" class="fixed inset-0 hidden bg-black/80 backdrop-blur-sm overflow-y-auto"
-        style="z-index: 99999;">
-        <div class="flex items-center justify-center min-h-screen p-2 sm:p-4">
-            <div class="bg-white rounded-2xl max-w-[400px] w-full relative flex flex-col shadow-2xl my-auto">
-                <button onclick="document.getElementById('checkoutModal').classList.add('hidden')"
-                    class="absolute top-3 right-3 text-gray-400 hover:text-gray-900 text-2xl font-bold z-10 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200">&times;</button>
-                <div class="p-5">
-                    <div class="text-center mb-5 mt-2">
-                        <h3 class="text-xl font-bold text-gray-900 mb-1">Completa tu Pedido</h3>
-                        <p class="text-[11px] text-gray-500">Completa tus datos correctamente para poder hacerte llegar
-                            el producto</p>
-                    </div>
-                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-100 flex items-center gap-3 mb-5">
-                        <div class="flex-1">
-                            <span class="block text-xs font-bold text-gray-900 leading-tight">Aceite De Orégano con
-                                Aceite de Semilla Negra 6000 Mg</span>
-                            <span id="modal-units" class="block text-[10px] text-gray-500 mt-0.5">1 Unidad</span>
-                        </div>
-                        <div class="text-right">
-                            <span id="modal-price" class="block text-base font-bold text-emerald-600">$23.990</span>
-                            <span class="block text-[9px] text-indigo-600 font-bold uppercase mt-0.5">ENVÍO
-                                GRATIS</span>
-                        </div>
-                    </div>
-                    <form id="codForm" onsubmit="submitCODOrder(event)" class="space-y-3">
-                        <div class="grid grid-cols-2 gap-3">
-                            <div>
-                                <label
-                                    class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Nombre</label>
-                                <input type="text" id="codName" required
-                                    class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors"
-                                    placeholder="Juan Pérez"
-                                    oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')">
-                            </div>
-                            <div>
-                                <label
-                                    class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">RUT
-                                    <span class="text-gray-400 font-normal normal-case">(Para envío)</span></label>
-                                <input type="text" id="rut" required
-                                    class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors"
-                                    placeholder="12.345.678-9" oninput="formatRut(this)">
-                                <p id="rutError" class="text-red-500 text-[10px] mt-1 hidden">RUT inválido. Verifícalo.
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <label
-                                class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Correo
-                                Electrónico</label>
-                            <input type="email" id="codEmail" required
-                                class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors"
-                                placeholder="Ej: nombre@correo.com">
-                        </div>
-                        <div>
-                            <label
-                                class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Teléfono
-                                (WhatsApp)</label>
-                            <input type="tel" id="codPhone" required
-                                class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors"
-                                placeholder="+56 9 1234 5678" value="+56 "
-                                oninput="let v = this.value; if(!v.startsWith('+56 ')) { this.value = '+56 '; return; } let num = v.substring(4).replace(/[^0-9]/g, ''); this.value = '+56 ' + num;">
-                            <p id="phoneError" class="text-red-500 text-[10px] mt-1 hidden">Ingresa un número válido y
-                                real.</p>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <div>
-                                <label
-                                    class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Calle</label>
-                                <input type="text" id="codAddress" required
-                                    class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors"
-                                    placeholder="Ej: Los Leones">
-                            </div>
-                            <div>
-                                <label
-                                    class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Nº
-                                    Casa / Depto</label>
-                                <input type="text" id="codApt" required
-                                    class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors"
-                                    placeholder="Ej: 123, Depto 5">
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <div>
-                                <label for="region"
-                                    class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Región
-                                    *</label>
-                                <select id="region" name="region" required
-                                    class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors appearance-none cursor-pointer">
-                                    <option value="">Selecciona</option>
-                                    <option value="arica">Región de Arica y Parinacota</option>
-                                    <option value="tarapaca">Región de Tarapacá</option>
-                                    <option value="antofagasta">Región de Antofagasta</option>
-                                    <option value="coquimbo">Región de Coquimbo</option>
-                                    <option value="valparaiso">Región de Valparaíso</option>
-                                    <option value="metropolitana">Región Metropolitana</option>
-                                    <option value="ohiggins">Región de O'Higgins</option>
-                                    <option value="maule">Región del Maule</option>
-                                    <option value="nuble">Región de Ñuble</option>
-                                    <option value="biobio">Región del Bío-Bío</option>
-                                    <option value="araucania">Región de La Araucanía</option>
-                                    <option value="losrios">Región de Los Ríos</option>
-                                    <option value="loslagos">Región de Los Lagos</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="comuna"
-                                    class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1">Comuna
-                                    *</label>
-                                <select id="comuna" name="comuna" required disabled
-                                    class="w-full bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-colors appearance-none cursor-pointer disabled:opacity-50 disabled:bg-gray-50 disabled:cursor-not-allowed">
-                                    <option value="">Selecciona</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <label
-                                class="block text-[10px] font-bold text-gray-700 uppercase tracking-wider mb-1.5">Método
-                                de Pago</label>
-                            <div class="border-2 border-indigo-600 bg-indigo-50/30 rounded-lg p-3">
-                                <div class="font-bold text-xs text-gray-900 mb-1 flex items-center gap-1.5">
-                                    <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    Pago Contra Entrega
-                                </div>
-                                <p class="text-[10px] text-gray-600 leading-relaxed">Paga de forma segura en efectivo o
-                                    transferencia bancaria al recibir. ¡Sin tarjetas!</p>
-                            </div>
-                            <p
-                                class="text-center text-[10px] text-emerald-600 font-medium mt-2 flex items-center justify-center gap-1">
-                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                </svg>
-                                Pago 100% seguro - SSL cifrado
-                            </p>
-                        </div>
-                        
-                        <button type="submit"
-                            class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3 rounded-lg text-sm transition-transform transform active:scale-95 shadow-lg shadow-emerald-500/20 mt-3">
-                            Confirmar Compra • Pago Contra Entrega
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Success Modal -->
     <div id="successModal" class="fixed inset-0 hidden bg-black/80 backdrop-blur-sm overflow-y-auto"
