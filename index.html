@@ -205,30 +205,25 @@ Apple/Linear Similarity: 9/10
                 <div
                     class="lg:col-span-6 flex flex-col-reverse md:flex-row gap-4 w-full max-w-[500px] mx-auto lg:ml-auto lg:mr-0 min-w-0">
                     <!-- Thumbnails -->
-                    <div class="flex flex-row md:flex-col gap-3 md:gap-4 shrink-0 md:w-20">
-                        <button
-                            onclick="document.getElementById('main-product-image').src=this.querySelector('img').src"
-                            class="w-16 md:w-full aspect-square bg-gray-50 rounded-xl md:rounded-2xl border-2 border-transparent focus:border-indigo-500 ring-2 ring-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden">
+                    <div class="flex flex-row md:flex-col gap-3 shrink-0 md:w-20 justify-center md:justify-start">
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/1.jpg')" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm">
                             <img src="assets/fotos producto/1.jpg" class="w-full h-full object-contain">
                         </button>
-                        <button
-                            onclick="document.getElementById('main-product-image').src=this.querySelector('img').src"
-                            class="w-16 md:w-full aspect-square bg-gray-50 rounded-xl md:rounded-2xl border-2 border-transparent focus:border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden ring-1 ring-gray-200">
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/2.jpg')" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm border border-gray-100">
                             <img src="assets/fotos producto/2.jpg" class="w-full h-full object-contain">
                         </button>
-                        <button
-                            onclick="document.getElementById('main-product-image').src=this.querySelector('img').src"
-                            class="aspect-square bg-gray-50 rounded-xl md:rounded-2xl border-2 border-transparent focus:border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden">
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/3.jpg')" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm border border-gray-100">
                             <img src="assets/fotos producto/3.jpg" class="w-full h-full object-contain">
                         </button>
-                        <button
-                            onclick="document.getElementById('main-product-image').src=this.querySelector('img').src"
-                            class="aspect-square bg-gray-50 rounded-xl md:rounded-2xl border-2 border-transparent focus:border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden">
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/4.jpg')" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm border border-gray-100">
                             <img src="assets/fotos producto/4.jpg" class="w-full h-full object-contain">
                         </button>
-                        <button
-                            onclick="document.getElementById('main-product-image').src=this.querySelector('img').src"
-                            class="aspect-square bg-gray-50 rounded-xl md:rounded-2xl border-2 border-transparent focus:border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden">
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/5.jpg')" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm border border-gray-100">
                             <img src="assets/fotos producto/5.jpg" class="w-full h-full object-contain">
                         </button>
                     </div>
@@ -1392,6 +1387,25 @@ Apple/Linear Similarity: 9/10
             activeBtn.className = "flex-1 py-3.5 px-4 text-center font-semibold text-[15px] transition-colors rounded-t-2xl bg-[#f9f9f9] text-gray-900 relative";
         }
 
+        
+        function changeProductImage(btn, src) {
+            const mainImg = document.getElementById('main-product-image');
+            if (mainImg) {
+                mainImg.src = src;
+            }
+            
+            // Get all buttons inside the thumbnails container
+            const container = btn.parentElement;
+            const buttons = container.querySelectorAll('button');
+            buttons.forEach(b => {
+                b.classList.remove('border-indigo-500');
+                b.classList.add('border-transparent');
+            });
+            
+            btn.classList.remove('border-transparent');
+            btn.classList.add('border-indigo-500');
+        }
+    
         let selectedUnits = '2 Unidades';
         let selectedPrice = '$32.990';
         let basePrice = 32990;
