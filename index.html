@@ -486,6 +486,69 @@ Apple/Linear Similarity: 9/10
                                 </div>
                             </div>
 
+                            <!-- Menú Desplegable de Información (Accordion) -->
+                            <div class="mt-6 border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm">
+                                <!-- Item 1: Descripción -->
+                                <div class="border-b border-gray-100 last:border-0">
+                                    <button type="button" onclick="toggleAccordion('acc-desc')" class="w-full flex justify-between items-center px-4 py-3.5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors text-sm">
+                                        <span>Descripción del producto</span>
+                                        <svg id="arrow-acc-desc" class="w-4 h-4 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                    </button>
+                                    <div id="acc-desc" class="hidden px-4 pb-4 pt-1 text-xs text-gray-700 leading-relaxed space-y-2 whitespace-pre-line">
+                                        Refuerza tu sistema inmunológico con la combinación herbal de aceite de orégano y semilla negra. Sus compuestos antioxidantes ayudan a proteger el cuerpo mientras apoyan la salud respiratoria y digestiva. Incorpora este complejo 2 en 1 a tu rutina diaria y fortalece tu bienestar de forma natural.
+                                    </div>
+                                </div>
+                                
+                                <!-- Item 2: Ingredientes -->
+                                <div class="border-b border-gray-100 last:border-0">
+                                    <button type="button" onclick="toggleAccordion('acc-ing')" class="w-full flex justify-between items-center px-4 py-3.5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors text-sm">
+                                        <span>Ingredientes del producto</span>
+                                        <svg id="arrow-acc-ing" class="w-4 h-4 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                    </button>
+                                    <div id="acc-ing" class="hidden px-4 pb-4 pt-1 text-xs text-gray-700 leading-relaxed">
+                                        Extracto de Origanum vulgare estandarizado a carvacrol + Extracto de Nigella sativa estandarizado a timoquinona. Cápsula vegetal (hipromelosa), aceite portador y excipientes de calidad alimentaria.
+                                        <span class="font-bold text-emerald-600 mt-2 block">Sin OGM • Sin gluten • Sin azúcar • Apto veganos.</span>
+                                    </div>
+                                </div>
+
+                                <!-- Item 3: Cómo se usa -->
+                                <div class="border-b border-gray-100 last:border-0">
+                                    <button type="button" onclick="toggleAccordion('acc-use')" class="w-full flex justify-between items-center px-4 py-3.5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors text-sm">
+                                        <span>Cómo se usa el producto</span>
+                                        <svg id="arrow-acc-use" class="w-4 h-4 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                    </button>
+                                    <div id="acc-use" class="hidden px-4 pb-4 pt-1 text-xs text-gray-700 leading-relaxed">
+                                        Toma 2 cápsulas al día junto con tu comida principal. <b>Nunca las tomes con el estómago vacío.</b> Úsalo por ciclos (ej. 3 semanas seguidas y 2 de descanso) para mantener tu flora intestinal protegida.
+                                    </div>
+                                </div>
+
+                                <!-- Item 4: Envíos -->
+                                <div class="border-b border-gray-100 last:border-0">
+                                    <button type="button" onclick="toggleAccordion('acc-ship')" class="w-full flex justify-between items-center px-4 py-3.5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors text-sm">
+                                        <span>Envíos</span>
+                                        <svg id="arrow-acc-ship" class="w-4 h-4 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                    </button>
+                                    <div id="acc-ship" class="hidden px-4 pb-4 pt-1 text-xs text-gray-700 leading-relaxed space-y-2">
+                                        <p><strong>Santiago (RM):</strong> Entrega rápida en 24 a 48 horas hábiles.</p>
+                                        <p><strong>Regiones:</strong> Entrega en 3 a 5 días hábiles a través de nuestros couriers asociados (Bluexpress, Starken).</p>
+                                        <p><strong>Pago Contra Entrega:</strong> Sin riesgos. Pagas tu pedido en efectivo o transferencia solo cuando el repartidor te lo entregue en la puerta de tu casa.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Item 5: Garantías -->
+                                <div class="border-b border-gray-100 last:border-0">
+                                    <button type="button" onclick="toggleAccordion('acc-guar')" class="w-full flex justify-between items-center px-4 py-3.5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors text-sm">
+                                        <span>Garantías</span>
+                                        <svg id="arrow-acc-guar" class="w-4 h-4 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                    </button>
+                                    <div id="acc-guar" class="hidden px-4 pb-4 pt-1 text-xs text-gray-700 leading-relaxed space-y-2">
+                                        <p><strong>Nuestro compromiso:</strong> En Mundo Aura buscamos que cada cliente tenga una experiencia de compra satisfactoria. Si tu pedido presenta algún inconveniente, estaremos disponibles para ayudarte.</p>
+                                        <p><strong>Productos dañados o incorrectos:</strong> Si el producto recibido presenta fallas o no es el solicitado, debes contactarnos dentro de las primeras 48 horas para coordinar la reposición sin costo adicional.</p>
+                                        <p><strong>Garantía legal:</strong> Todos nuestros clientes cuentan con el respaldo de la Ley N.º 19.496 sobre Protección de los Derechos de los Consumidores en Chile.</p>
+                                    </div>
+                                </div>
+                            </div>
+
                             
 
 
@@ -1391,6 +1454,20 @@ Apple/Linear Similarity: 9/10
         }
 
         
+        
+        function toggleAccordion(id) {
+            const el = document.getElementById(id);
+            const arrow = document.getElementById('arrow-' + id);
+            
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                if (arrow) arrow.classList.add('rotate-180');
+            } else {
+                el.classList.add('hidden');
+                if (arrow) arrow.classList.remove('rotate-180');
+            }
+        }
+    
         function changeProductImage(btn, src) {
             const mainImg = document.getElementById('main-product-image');
             if (mainImg) {
