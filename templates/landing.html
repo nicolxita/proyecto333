@@ -164,7 +164,7 @@ MUNDO <img src="assets/logo.png" alt="Logo" class="h-12 md:h-16 w-auto object-co
             <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
                 <div class="lg:col-span-6 flex flex-col-reverse md:flex-row gap-4 w-full max-w-[500px] mx-auto lg:ml-auto lg:mr-0 min-w-0">
                                         <!-- Thumbnails -->
-                    <div class="flex flex-row md:flex-col gap-3 shrink-0 md:w-20 justify-start overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 w-full md:w-auto">
+                    <div id="thumbnail-container" class="flex flex-row md:flex-col gap-3 shrink-0 md:w-20 justify-start overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 w-full md:w-auto">
                         <button onclick="changeProductImage(this, 'assets/fotos producto/1.jpg')" 
                             class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm">
                             <img src="assets/fotos producto/1.jpg" class="w-full h-full object-contain">
@@ -194,9 +194,29 @@ MUNDO <img src="assets/logo.png" alt="Logo" class="h-12 md:h-16 w-auto object-co
                             <img src="assets/fotos producto/7.jpg" class="w-full h-full object-contain">
                         </button>
                     </div>
-                    <!-- Main Image -->
-                    <div class="w-full md:w-[85%] aspect-square bg-gray-50 rounded-2xl md:rounded-3xl border border-gray-100 p-4 md:p-8 relative overflow-hidden shadow-sm flex items-center justify-center">
-                        <img id="main-product-image" src="assets/fotos producto/1.jpg" alt="Producto" class="w-full h-full object-contain">
+                                        <!-- Main Image (Swipeable Carousel with peek effect) -->
+                    <div id="product-carousel" class="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-none w-full pb-2 md:pb-0 select-none cursor-grab active:cursor-grabbing">
+                        <div class="w-[85%] md:w-full shrink-0 snap-center aspect-square bg-gray-50 rounded-2xl md:rounded-3xl border border-gray-100 p-4 md:p-8 relative flex items-center justify-center shadow-sm">
+                            <img src="assets/fotos producto/1.jpg" class="w-full h-full object-contain pointer-events-none">
+                        </div>
+                        <div class="w-[85%] md:w-full shrink-0 snap-center aspect-square bg-gray-50 rounded-2xl md:rounded-3xl border border-gray-100 p-4 md:p-8 relative flex items-center justify-center shadow-sm">
+                            <img src="assets/fotos producto/2.jpg" class="w-full h-full object-contain pointer-events-none">
+                        </div>
+                        <div class="w-[85%] md:w-full shrink-0 snap-center aspect-square bg-gray-50 rounded-2xl md:rounded-3xl border border-gray-100 p-4 md:p-8 relative flex items-center justify-center shadow-sm">
+                            <img src="assets/fotos producto/4.jpg" class="w-full h-full object-contain pointer-events-none">
+                        </div>
+                        <div class="w-[85%] md:w-full shrink-0 snap-center aspect-square bg-gray-50 rounded-2xl md:rounded-3xl border border-gray-100 p-4 md:p-8 relative flex items-center justify-center shadow-sm">
+                            <img src="assets/fotos producto/5.jpg" class="w-full h-full object-contain pointer-events-none">
+                        </div>
+                        <div class="w-[85%] md:w-full shrink-0 snap-center aspect-square bg-gray-50 rounded-2xl md:rounded-3xl border border-gray-100 p-4 md:p-8 relative flex items-center justify-center shadow-sm">
+                            <img src="assets/fotos producto/5.png" class="w-full h-full object-contain pointer-events-none">
+                        </div>
+                        <div class="w-[85%] md:w-full shrink-0 snap-center aspect-square bg-gray-50 rounded-2xl md:rounded-3xl border border-gray-100 p-4 md:p-8 relative flex items-center justify-center shadow-sm">
+                            <img src="assets/fotos producto/6.jpg" class="w-full h-full object-contain pointer-events-none">
+                        </div>
+                        <div class="w-[85%] md:w-full shrink-0 snap-center aspect-square bg-gray-50 rounded-2xl md:rounded-3xl border border-gray-100 p-4 md:p-8 relative flex items-center justify-center shadow-sm">
+                            <img src="assets/fotos producto/7.jpg" class="w-full h-full object-contain pointer-events-none">
+                        </div>
                     </div>
                 </div>
                 <div class="lg:col-span-6 w-full min-w-0">
@@ -1002,6 +1022,15 @@ MUNDO <img src="assets/logo.png" alt="Logo" class="h-12 md:h-16 w-auto object-co
     </div>
 
     <style>
+
+        .scrollbar-none::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-none {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    
         .animate-fade-in {
             animation: fadeIn 0.3s ease-out forwards;
         }
@@ -1031,6 +1060,103 @@ MUNDO <img src="assets/logo.png" alt="Logo" class="h-12 md:h-16 w-auto object-co
 
         
         
+        
+        // Interactivity for product image gallery swiper carousel
+        function changeProductImage(btn, src) {
+            const carousel = document.getElementById('product-carousel');
+            if (carousel) {
+                const children = carousel.children;
+                // Find index of clicked item matching the image source
+                let targetIndex = -1;
+                for (let i = 0; i < children.length; i++) {
+                    const img = children[i].querySelector('img');
+                    if (img && img.getAttribute('src') === src) {
+                        targetIndex = i;
+                        break;
+                    }
+                }
+                
+                if (targetIndex !== -1 && children[targetIndex]) {
+                    children[targetIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            }
+            
+            // Highlight active thumbnail button border
+            const container = btn.parentElement;
+            const buttons = container.querySelectorAll('button');
+            buttons.forEach(b => {
+                b.classList.remove('border-indigo-500');
+                b.classList.add('border-transparent');
+            });
+            btn.classList.remove('border-transparent');
+            btn.classList.add('border-indigo-500');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('product-carousel');
+            const thumbnailsContainer = document.getElementById('thumbnail-container');
+            
+            if (carousel) {
+                // 1. Highlight thumbnail dynamically on manual scroll
+                const observerOptions = {
+                    root: carousel,
+                    threshold: 0.5,
+                    trackVisibility: false
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    const buttons = document.querySelectorAll('#thumbnail-container button');
+                    if (buttons.length === 0) return;
+                    
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const index = Array.from(carousel.children).indexOf(entry.target);
+                            if (index !== -1 && buttons[index]) {
+                                buttons.forEach(b => {
+                                    b.classList.remove('border-indigo-500');
+                                    b.classList.add('border-transparent');
+                                });
+                                buttons[index].classList.remove('border-transparent');
+                                buttons[index].classList.add('border-indigo-500');
+                            }
+                        }
+                    });
+                }, observerOptions);
+                
+                Array.from(carousel.children).forEach(child => observer.observe(child));
+                
+                // 2. Enable mouse drag to scroll on desktop
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+                
+                carousel.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    carousel.classList.remove('cursor-grab');
+                    carousel.classList.add('cursor-grabbing');
+                    startX = e.pageX - carousel.offsetLeft;
+                    scrollLeft = carousel.scrollLeft;
+                });
+                carousel.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    carousel.classList.remove('cursor-grabbing');
+                    carousel.classList.add('cursor-grab');
+                });
+                carousel.addEventListener('mouseup', () => {
+                    isDown = false;
+                    carousel.classList.remove('cursor-grabbing');
+                    carousel.classList.add('cursor-grab');
+                });
+                carousel.addEventListener('mousemove', (e) => {
+                    if(!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - carousel.offsetLeft;
+                    const walk = (x - startX) * 1.5; // Scroll speed multiplier
+                    carousel.scrollLeft = scrollLeft - walk;
+                });
+            }
+        });
+    
         function toggleAccordion(id) {
             const el = document.getElementById(id);
             const arrow = document.getElementById('arrow-' + id);
@@ -1044,23 +1170,7 @@ MUNDO <img src="assets/logo.png" alt="Logo" class="h-12 md:h-16 w-auto object-co
             }
         }
     
-        function changeProductImage(btn, src) {
-            const mainImg = document.getElementById('main-product-image');
-            if (mainImg) {
-                mainImg.src = src;
-            }
-            
-            // Get all buttons inside the thumbnails container
-            const container = btn.parentElement;
-            const buttons = container.querySelectorAll('button');
-            buttons.forEach(b => {
-                b.classList.remove('border-indigo-500');
-                b.classList.add('border-transparent');
-            });
-            
-            btn.classList.remove('border-transparent');
-            btn.classList.add('border-indigo-500');
-        }
+
     
         let selectedUnits = '2 Unidades';
         let selectedPrice = '$32.990';
