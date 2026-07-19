@@ -1655,7 +1655,7 @@ Apple/Linear Similarity: 9/10
             
             if (comunaInput && suggestionsContainer) {
                 comunaInput.addEventListener('input', function() {
-                    const val = this.value.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim();
+                    const val = this.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
                     suggestionsContainer.innerHTML = '';
                     
                     if (val.length < 2) {
@@ -1669,7 +1669,7 @@ Apple/Linear Similarity: 9/10
                         const regionNombre = regionNombres[regionKey] || regionKey;
                         
                         comunas.forEach(comuna => {
-                            const normalizedComuna = comuna.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+                            const normalizedComuna = comuna.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                             if (normalizedComuna.includes(val)) {
                                 matches.push({
                                     comuna: comuna,
