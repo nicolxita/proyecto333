@@ -1144,7 +1144,7 @@ Apple/Linear Similarity: 9/10
                             <p class="text-[14px] text-gray-600 leading-relaxed mb-5 font-medium">
                                 Olvídate de las paredes rayadas con plumón o las mesas manchadas con pintura. Con esta pizarra, tus hijos dibujan de forma infinita y borran todo con solo presionar un botón.
                             </p>
-                            <p class="isSelectedEnd text-sm font-bold text-gray-800 leading-relaxed mt-4 inline-block text-left bg-gray-50 border border-gray-100 rounded-2xl p-4 shadow-sm">
+                            <p class="isSelectedEnd text-sm text-gray-700 leading-relaxed mt-4 text-left">
                                 <span>🚚 Envío gratis y rápido </span><br>
                                 <span>💳 Paga en tu casa </span><br>
                                 <span>📦 Despacho a domicilio</span><br>
@@ -1183,7 +1183,7 @@ Apple/Linear Similarity: 9/10
                         <span>★★★★★</span>
                         <span class="text-sm font-bold text-gray-800">4.87 de 5</span>
                     </div>
-                    <p class="text-xs text-gray-500">Basado en 299 reseñas</p>
+                    <p class="text-xs text-gray-500">Basado en 34 reseñas</p>
                     <button type="button" onclick="document.getElementById('checkoutModal').classList.remove('hidden')" class="mt-4 inline-block bg-neutral-800 hover:bg-neutral-900 text-white font-bold text-xs py-2.5 px-6 rounded-lg transition-colors">
                         Escribir una reseña
                     </button>
@@ -1193,13 +1193,13 @@ Apple/Linear Similarity: 9/10
                 <div class="border-t border-b border-gray-100 py-6 mb-8">
                     <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Fotos de clientes</h4>
                     <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-none justify-center">
-                        <div class="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex-shrink-0">
+                        <div onclick="openReviewLightbox('assets/reseñas/1756358604__0__N7S9YUcE__b6223ea8-923f-4358-aab8-bfc94c849375__original.webp')" class="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex-shrink-0 cursor-pointer hover:opacity-90 transition-opacity">
                             <img src="assets/reseñas/1756358604__0__N7S9YUcE__b6223ea8-923f-4358-aab8-bfc94c849375__original.webp" class="w-full h-full object-cover">
                         </div>
-                        <div class="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex-shrink-0">
+                        <div onclick="openReviewLightbox('assets/reseñas/1756358604__0__uyA61fBB__b201df53-7e72-4cb9-b9da-41d600fb5879__original.webp')" class="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex-shrink-0 cursor-pointer hover:opacity-90 transition-opacity">
                             <img src="assets/reseñas/1756358604__0__uyA61fBB__b201df53-7e72-4cb9-b9da-41d600fb5879__original.webp" class="w-full h-full object-cover">
                         </div>
-                        <div class="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex-shrink-0">
+                        <div onclick="openReviewLightbox('assets/reseñas/1756358606__0__jsP0bfDj__1476d55f-6895-40e1-979e-353d12f558a3__original.webp')" class="w-24 h-24 rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex-shrink-0 cursor-pointer hover:opacity-90 transition-opacity">
                             <img src="assets/reseñas/1756358606__0__jsP0bfDj__1476d55f-6895-40e1-979e-353d12f558a3__original.webp" class="w-full h-full object-cover">
                         </div>
                     </div>
@@ -2305,6 +2305,14 @@ Apple/Linear Similarity: 9/10
     <script async src="https://www.tiktok.com/embed.js"></script>
 
     
+
+    <!-- Review Photo Lightbox Modal -->
+    <div id="reviewLightbox" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeReviewLightbox()">
+        <div class="relative max-w-3xl max-h-[90vh] flex items-center justify-center">
+            <button class="absolute -top-10 right-0 text-white hover:text-gray-300 text-4xl font-bold z-10" onclick="closeReviewLightbox()">&times;</button>
+            <img id="lightboxImage" src="" class="max-w-full max-h-[85vh] rounded-lg object-contain shadow-2xl" onclick="event.stopPropagation()">
+        </div>
+    </div>
 </body>
 
 </html>
