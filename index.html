@@ -214,30 +214,47 @@ Apple/Linear Similarity: 9/10
         <!-- 1. Hero Section -->
         <section class="container mx-auto px-6 pt-6 pb-2 md:pt-12 md:pb-4">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
-                <!-- Left Column: Sticky Image Gallery on Desktop -->
+                <!-- Left Column: Sticky Image & Video Gallery on Desktop -->
                 <div class="lg:col-span-6 flex flex-col-reverse md:flex-row gap-4 w-full max-w-[500px] mx-auto lg:ml-auto lg:mr-0 min-w-0 lg:sticky lg:top-24">
-                    <!-- Thumbnails -->
+                    <!-- Thumbnails (3rd item is Video) -->
                     <div id="thumbnail-container" class="flex flex-row md:flex-col gap-3 shrink-0 md:w-20 justify-start overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 w-full md:w-auto">
-                        <button onclick="changeProductImage(this, 'assets/fotos producto/1.png')" 
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/1.png', 0)" 
                             class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm">
                             <img src="assets/fotos producto/1.png" class="w-full h-full object-contain">
                         </button>
-                        <button onclick="changeProductImage(this, 'assets/fotos producto/2.jpg')" 
-                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm border border-gray-100">
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/2.jpg', 1)" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:border-indigo-500 border-gray-100 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm">
                             <img src="assets/fotos producto/2.jpg" class="w-full h-full object-contain">
                         </button>
-                        <button onclick="changeProductImage(this, 'assets/fotos producto/3.jpg')" 
-                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm border border-gray-100">
-                            <img src="assets/fotos producto/3.jpg" class="w-full h-full object-contain">
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/3.mp4', 2)" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:border-indigo-500 border-gray-100 focus:outline-none transition-all hover:bg-black overflow-hidden shadow-sm relative group">
+                            <video src="assets/fotos producto/3.mp4" muted playsinline preload="metadata" class="w-full h-full object-cover pointer-events-none bg-white"></video>
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30">
+                                <svg class="w-5 h-5 text-white drop-shadow-md" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
                         </button>
-                        <button onclick="changeProductImage(this, 'assets/fotos producto/4.jpg')" 
-                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:border-indigo-500 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm border border-gray-100">
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/3.png', 3)" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:border-indigo-500 border-gray-100 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm">
+                            <img src="assets/fotos producto/3.png" class="w-full h-full object-contain">
+                        </button>
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/4.jpg', 4)" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:border-indigo-500 border-gray-100 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm">
                             <img src="assets/fotos producto/4.jpg" class="w-full h-full object-contain">
                         </button>
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/5.jpg', 5)" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:border-indigo-500 border-gray-100 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm">
+                            <img src="assets/fotos producto/5.jpg" class="w-full h-full object-contain">
+                        </button>
+                        <button onclick="changeProductImage(this, 'assets/fotos producto/6.jpg', 6)" 
+                            class="w-12 h-12 md:w-16 md:h-16 shrink-0 aspect-square bg-gray-50 rounded-xl border-2 border-transparent focus:border-indigo-500 border-gray-100 focus:outline-none transition-all hover:bg-gray-100 overflow-hidden shadow-sm">
+                            <img src="assets/fotos producto/6.jpg" class="w-full h-full object-contain">
+                        </button>
                     </div>
-                    <!-- Main Image (Swipeable Carousel with min-w-0) -->
+                    <!-- Main Carousel (Optimized muted video + images) -->
                     <div id="product-carousel" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-none w-full min-w-0 pb-2 md:pb-0 select-none cursor-grab active:cursor-grabbing px-1">
-                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden border border-gray-100 bg-white relative group">
+                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden bg-white relative group">
                             <img src="assets/fotos producto/1.png" class="w-full h-full object-contain pointer-events-none">
                             <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm p-1.5 rounded-full shadow-sm">
                                 <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -245,7 +262,7 @@ Apple/Linear Similarity: 9/10
                                 </svg>
                             </div>
                         </div>
-                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden border border-gray-100 bg-white relative group">
+                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden bg-white relative group">
                             <img src="assets/fotos producto/2.jpg" class="w-full h-full object-contain pointer-events-none">
                             <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm p-1.5 rounded-full shadow-sm">
                                 <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -253,16 +270,41 @@ Apple/Linear Similarity: 9/10
                                 </svg>
                             </div>
                         </div>
-                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden border border-gray-100 bg-white relative group">
-                            <img src="assets/fotos producto/3.jpg" class="w-full h-full object-contain pointer-events-none">
+                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden bg-white relative group">
+                            <video src="assets/fotos producto/3.mp4" autoplay loop muted playsinline preload="metadata" class="w-full h-full object-contain pointer-events-none bg-white"></video>
+                            <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-gray-700 text-[10px] font-bold flex items-center gap-1.5 shadow-sm">
+                                <svg class="w-3.5 h-3.5 text-emerald-600 fill-current" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                                </svg>
+                                VIDEO DEMO
+                            </div>
+                        </div>
+                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden bg-white relative group">
+                            <img src="assets/fotos producto/3.png" class="w-full h-full object-contain pointer-events-none">
                             <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm p-1.5 rounded-full shadow-sm">
                                 <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path>
                                 </svg>
                             </div>
                         </div>
-                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden border border-gray-100 bg-white relative group">
+                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden bg-white relative group">
                             <img src="assets/fotos producto/4.jpg" class="w-full h-full object-contain pointer-events-none">
+                            <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm p-1.5 rounded-full shadow-sm">
+                                <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden bg-white relative group">
+                            <img src="assets/fotos producto/5.jpg" class="w-full h-full object-contain pointer-events-none">
+                            <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm p-1.5 rounded-full shadow-sm">
+                                <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="w-[88%] md:w-full shrink-0 snap-center aspect-square flex items-center justify-center rounded-2xl overflow-hidden bg-white relative group">
+                            <img src="assets/fotos producto/6.jpg" class="w-full h-full object-contain pointer-events-none">
                             <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm p-1.5 rounded-full shadow-sm">
                                 <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path>
@@ -359,8 +401,8 @@ Apple/Linear Similarity: 9/10
                             <div class="space-y-3 mb-4" id="promo-selector-vertical">
                                 <!-- Promo 1 -->
                                 <label onclick="selectPromo(1, 24990); event.preventDefault();" id="label-promo-1" 
-                                    class="relative flex items-center justify-between border border-gray-200 rounded-2xl p-3.5 cursor-pointer bg-white transition-all shadow-sm select-none hover:border-emerald-300">
-                                    <input type="radio" name="promo" value="1" class="hidden">
+                                    class="relative flex items-center justify-between border-2 border-emerald-500 rounded-2xl p-3.5 cursor-pointer bg-emerald-50/40 transition-all shadow-sm select-none hover:border-emerald-500">
+                                    <input type="radio" name="promo" value="1" class="hidden" checked>
                                     <div class="flex items-center gap-3">
                                         <img src="assets/fotos producto/1.png" alt="1 Unidad" class="w-12 h-12 rounded-xl object-contain bg-gray-50 border border-gray-100 p-0.5">
                                         <div class="text-left">
@@ -376,9 +418,9 @@ Apple/Linear Similarity: 9/10
                                 </label>
 
                                 <!-- Promo 2 (Default Selected) -->
-                                <label onclick="selectPromo(2, 39990); event.preventDefault();" id="label-promo-2" 
-                                    class="relative flex items-center justify-between border-2 border-emerald-500 rounded-2xl p-3.5 cursor-pointer bg-emerald-50/40 transition-all shadow-sm select-none hover:border-emerald-500">
-                                    <input type="radio" name="promo" value="2" class="hidden" checked>
+                                <label onclick="selectPromo(1, 24990); event.preventDefault();" id="label-promo-2" 
+                                    class="relative flex items-center justify-between border border-gray-200 rounded-2xl p-3.5 cursor-pointer bg-white transition-all shadow-sm select-none hover:border-emerald-300">
+                                    <input type="radio" name="promo" value="2" class="hidden">
                                     <div class="flex items-center gap-3">
                                         <img src="assets/fotos producto/2.jpg" alt="2 Unidades" class="w-12 h-12 rounded-xl object-contain bg-gray-50 border border-gray-100 p-0.5">
                                         <div class="text-left">
@@ -406,7 +448,7 @@ Apple/Linear Similarity: 9/10
                             <div class="bg-gray-50 rounded-2xl p-4 mb-4 border border-gray-200/50 text-xs">
                                 <div class="flex justify-between items-center mb-2 text-gray-600">
                                     <span>Subtotal</span>
-                                    <span id="summary-subtotal" class="font-semibold">$99.980</span>
+                                    <span id="summary-subtotal" class="font-semibold">$49.990</span>
                                 </div>
                                 <div class="flex justify-between items-center mb-2 text-gray-600">
                                     <span>Envío</span>
@@ -414,7 +456,7 @@ Apple/Linear Similarity: 9/10
                                 </div>
                                 <div class="flex justify-between items-center mb-2 text-gray-600">
                                     <span>Descuentos 🏷️</span>
-                                    <span id="summary-discount" class="text-red-500 font-bold">- $59.990</span>
+                                    <span id="summary-discount" class="text-red-500 font-bold">- $25.000</span>
                                 </div>
                                 <div id="summary-express-row" class="flex justify-between items-center mb-2 text-gray-600 hidden">
                                     <span>Envío Express 🚀</span>
@@ -423,7 +465,7 @@ Apple/Linear Similarity: 9/10
                                 <hr class="border-gray-200 my-2">
                                 <div class="flex justify-between items-center text-sm text-gray-900 font-black">
                                     <span>Total</span>
-                                    <span id="summary-total" class="text-base text-gray-900">$39.990</span>
+                                    <span id="summary-total" class="text-base text-gray-900">$24.990</span>
                                 </div>
                             </div>
 
@@ -473,7 +515,7 @@ Apple/Linear Similarity: 9/10
                                         <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                         </svg>
-                                        <span>COMPRA AHORA - <span id="btn-price-display">$39.990</span></span>
+                                        <span>COMPRA AHORA - <span id="btn-price-display">$24.990</span></span>
                                     </div>
                                     <span class="text-[10px] opacity-90 font-medium uppercase tracking-wider">Paga al Recibir</span>
                                 </button>
@@ -1206,7 +1248,7 @@ Apple/Linear Similarity: 9/10
                         <span class="text-sm font-bold text-gray-800">4.87 de 5</span>
                     </div>
                     <p class="text-xs text-gray-500">Basado en 34 reseñas</p>
-                    <button type="button" onclick="document.getElementById('checkoutModal').classList.remove('hidden')" class="mt-4 inline-block bg-neutral-800 hover:bg-neutral-900 text-white font-bold text-xs py-2.5 px-6 rounded-lg transition-colors">
+                    <button type="button" onclick="openWriteReviewModal()" class="mt-4 inline-block px-5 py-2.5 bg-gray-900 text-white text-xs font-bold rounded-full hover:bg-black transition-colors cursor-pointer shadow-sm">
                         Escribir una reseña
                     </button>
                 </div>
@@ -1573,36 +1615,36 @@ Apple/Linear Similarity: 9/10
         
         
         // Interactivity for product image gallery swiper carousel
-        function changeProductImage(btn, src) {
+        function changeProductImage(btn, src, index) {
             const carousel = document.getElementById('product-carousel');
-            if (carousel) {
-                const children = carousel.children;
-                // Find index of clicked item matching the image source
-                let targetIndex = -1;
-                for (let i = 0; i < children.length; i++) {
-                    const img = children[i].querySelector('img');
-                    if (img && img.getAttribute('src') === src) {
-                        targetIndex = i;
-                        break;
+            if (carousel && carousel.children.length > 0) {
+                let targetIndex = index;
+                if (targetIndex === undefined || targetIndex < 0) {
+                    for (let i = 0; i < carousel.children.length; i++) {
+                        const media = carousel.children[i].querySelector('img, video');
+                        if (media && media.getAttribute('src') === src) {
+                            targetIndex = i;
+                            break;
+                        }
                     }
                 }
                 
-                if (targetIndex !== -1 && children[targetIndex]) {
-                    children[targetIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                if (targetIndex !== undefined && targetIndex >= 0 && carousel.children[targetIndex]) {
+                    carousel.children[targetIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                 }
             }
             
             // Highlight active thumbnail button border
-            const container = btn.parentElement;
-            const buttons = container.querySelectorAll('button');
-            buttons.forEach(b => {
-                b.classList.remove('border-indigo-500');
-                b.classList.add('border-transparent');
-            });
-            btn.classList.remove('border-transparent');
-            btn.classList.add('border-indigo-500');
+            if (btn && btn.parentElement) {
+                const buttons = btn.parentElement.querySelectorAll('button');
+                buttons.forEach(b => {
+                    b.classList.remove('border-indigo-500');
+                    b.classList.add('border-transparent');
+                });
+                btn.classList.remove('border-transparent');
+                btn.classList.add('border-indigo-500');
+            }
         }
-
         window.addEventListener('DOMContentLoaded', () => {
             const carousel = document.getElementById('product-carousel');
             const thumbnailsContainer = document.getElementById('thumbnail-container');
@@ -1683,9 +1725,9 @@ Apple/Linear Similarity: 9/10
     
 
     
-        let selectedUnits = '2 Unidades';
-        let selectedPrice = '$39.990';
-        let basePrice = 39990;
+        let selectedUnits = '1 Unidad';
+        let selectedPrice = '$24.990';
+        let basePrice = 24990;
         let expressPrice = 1990;
         let useExpress = false;
 
@@ -1717,7 +1759,7 @@ Apple/Linear Similarity: 9/10
 
         // Initialize on load
         window.addEventListener('DOMContentLoaded', () => {
-            selectPromo(2, 39990);
+            selectPromo(1, 24990);
         });
 
         let selectedRegion = '-';
@@ -1915,7 +1957,7 @@ Apple/Linear Similarity: 9/10
                     document.getElementById('codForm').reset();
                     const bumpCheckbox = document.getElementById('express-bump');
                     if (bumpCheckbox) bumpCheckbox.checked = false;
-                    selectPromo(2, 39990);
+                    selectPromo(1, 24990);
                     submitBtn.innerText = 'PÍDELO AHORA Y PAGA EN CASA';
                     submitBtn.disabled = false;
 
@@ -2324,6 +2366,126 @@ Apple/Linear Similarity: 9/10
             <img id="lightboxImage" src="" class="max-w-full max-h-[85vh] rounded-lg object-contain shadow-2xl" onclick="event.stopPropagation()">
         </div>
     </div>
+
+<!-- Write Review Modal -->
+<div id="writeReviewModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full shadow-2xl border border-gray-100 relative animate-fade-in">
+        <button type="button" onclick="closeWriteReviewModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 p-1.5 rounded-full hover:bg-gray-100 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <h3 class="text-xl font-bold text-gray-900 mb-1 text-left">Escribir una reseña</h3>
+        <p class="text-xs text-gray-500 mb-5 text-left">Comparte tu experiencia con otros compradores</p>
+        
+        <form id="writeReviewForm" onsubmit="submitReview(event)">
+            <div class="mb-4 text-left">
+                <label class="block text-xs font-bold text-gray-700 mb-1">Tu Nombre</label>
+                <input type="text" id="review-author" required placeholder="Ej: María González" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all">
+            </div>
+            
+            <div class="mb-4 text-left">
+                <label class="block text-xs font-bold text-gray-700 mb-1">Calificación</label>
+                <div class="flex items-center gap-1.5 text-2xl text-amber-400 cursor-pointer select-none" id="review-stars">
+                    <span onclick="setRating(1)" class="star-item hover:scale-110 transition-transform">★</span>
+                    <span onclick="setRating(2)" class="star-item hover:scale-110 transition-transform">★</span>
+                    <span onclick="setRating(3)" class="star-item hover:scale-110 transition-transform">★</span>
+                    <span onclick="setRating(4)" class="star-item hover:scale-110 transition-transform">★</span>
+                    <span onclick="setRating(5)" class="star-item hover:scale-110 transition-transform">★</span>
+                </div>
+            </div>
+            
+            <div class="mb-5 text-left">
+                <label class="block text-xs font-bold text-gray-700 mb-1">Tu Reseña</label>
+                <textarea id="review-comment" required rows="3" placeholder="Cuéntanos qué te pareció el producto..." class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-600/20 transition-all transform active:scale-95">
+                Enviar reseña
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Review Success Popup Modal -->
+<div id="reviewSuccessModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl p-6 md:p-8 max-w-sm w-full shadow-2xl text-center border border-gray-100 animate-fade-in">
+        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+        <h3 class="text-lg font-extrabold text-gray-900 mb-2">¡Reseña Enviada!</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6 font-medium">tu reseña fue enviada, gracias por tus comentarios!</p>
+        <button type="button" onclick="closeReviewSuccessModal()" class="w-full py-3 bg-gray-900 hover:bg-black text-white font-bold text-sm rounded-xl shadow-md transition-all active:scale-95">
+            Aceptar
+        </button>
+    </div>
+</div>
+
+<script>
+let currentRating = 5;
+
+function openWriteReviewModal() {
+    document.getElementById('writeReviewModal').classList.remove('hidden');
+}
+
+function closeWriteReviewModal() {
+    document.getElementById('writeReviewModal').classList.add('hidden');
+}
+
+function setRating(val) {
+    currentRating = val;
+    const stars = document.querySelectorAll('#review-stars .star-item');
+    stars.forEach((star, index) => {
+        if (index < val) {
+            star.classList.remove('text-gray-300');
+            star.classList.add('text-amber-400');
+        } else {
+            star.classList.remove('text-amber-400');
+            star.classList.add('text-gray-300');
+        }
+    });
+}
+
+function submitReview(e) {
+    e.preventDefault();
+    const author = document.getElementById('review-author').value.trim();
+    const comment = document.getElementById('review-comment').value.trim();
+    
+    if (!author || !comment) return;
+    
+    const reviewList = document.getElementById('reviews-list-container');
+    if (reviewList) {
+        let starsHtml = '★'.repeat(currentRating) + '☆'.repeat(5 - currentRating);
+        const newReviewHtml = `
+            <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between animate-fade-in mb-3">
+                <div>
+                    <div class="flex items-center gap-1 mb-1">
+                        <span class="text-amber-400 text-sm font-bold">${starsHtml}</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-[11px] text-gray-500 mb-2">
+                        <span class="font-medium text-gray-700">${author}</span>
+                        <span>•</span>
+                        <span class="text-emerald-600 font-semibold flex items-center gap-0.5">
+                            <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Compra verificada
+                        </span>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">${comment}</p>
+                </div>
+            </div>`;
+        reviewList.insertAdjacentHTML('afterbegin', newReviewHtml);
+    }
+    
+    document.getElementById('writeReviewForm').reset();
+    setRating(5);
+    closeWriteReviewModal();
+    document.getElementById('reviewSuccessModal').classList.remove('hidden');
+}
+
+function closeReviewSuccessModal() {
+    document.getElementById('reviewSuccessModal').classList.add('hidden');
+}
+</script>
 </body>
 
 </html>
